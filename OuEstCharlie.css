@@ -1,0 +1,36 @@
+:root {
+    --secondary-color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    font-weight: bold;
+
+    a {
+        text-decoration: none;
+        margin: auto 1rem;
+
+        background-color: var(--secondary-color);
+        font-size: 2rem;
+        border-radius: 10px;
+    }
+}
+
+footer {
+    background-color: black;
+    height: 4rem;
+    width: 100%;
+    color: var(--secondary-color);
+}
