@@ -4,10 +4,11 @@
 }
 
 body {
+    background-color: black;
     display: flex;
     flex-direction: column ;
     margin: 0;
-    min-height: 100vh; /*1 vh correspond à 1% du viewport (zone visible de la page web*/
+    min-height: 100vh;
 }
 
 header {
@@ -32,7 +33,7 @@ main {
 
 .background-container {
     background-image: url("./Images_OuEstCharlie/ou_est_charlie.jpg");
-    background-size: cover;
+    background-size: contain;
     width: 100vw;
     height: 100vh;
     background-position: center;
@@ -40,33 +41,20 @@ main {
     position: relative;
 }
 
-/*#charlie {
-    width: 4%;
-    position: absolute;
-    right: 25vw;
-    bottom: 50vh;
-}*/
-
 #charlie {
     position: absolute;
-    /* left: 55%;
-    top: 50%;
-    transform: translate(-50%, -50%); */
     top: 50%;
     left: 75%;
-    width: 50%;
+    width: 10%;
     height: auto;
     transform: translate(-50%, -50%);
 }
 
 #herculeFoireux {
     position: absolute;
-    /* left: 55%;
-    top: 50%;
-    transform: translate(-50%, -50%); */
     top: 60%;
     left: 75%;
-    width: 50%;
+    width: 20%;
     height: auto;
     transform: translate(-50%, -50%);  
 }
