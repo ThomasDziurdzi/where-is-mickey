@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-align: right;
+    padding: 1em;
+    position: relative;
+    z-index: 10;
+}
+
+.background {
+    background-image: url('images/darkstreet.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.cadre {
+    border: 1px solid white;
+    padding: 5px;
+    display: inline-block;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    position: fixed;
+}
+
+img {
+    position: absolute;
+
+    width: 10vw;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+#gun {
+    width: 5vw;
+    top: 66vh;
+    left: 65vw;
+}
+
+#knife {
+    width: 5vw;
+    top: 65vh;
+    left: 68vw;
+}
+
+#launch {
+    width: 5vw;
+    top: 38vh;
+    left: 58vw;
+}
+
+#bag {
+    width: 5vw;
+    top: 62vh;
+    left: 53vw;
+}
+
+#sandwich {
+    width: 5vw;
+    top: 40vh;
+    left: 63vw;
+}
+
+#mickey {
+    width: 15vw;
+    top: 66vh;
+    left: 45vw;
+}
+
+#car {
+    width: 13vw;
+    top: 41vh;
+    left: 28vw;
+}
+
+#garbage {
+    width: 25vw;
+    top: 50vh;
+    left: 60vw;
+}
+
+#franklinsdf {
+    width: 20vw;
+    top: 64vh;
+    left: 6vw;
+}
+
+#penguin {
+    width: 10%;
+    top: 57vh;
+    left: 88vw;
+    z-index: 15;
+}
+
+
+
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: left;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 50;
+}
