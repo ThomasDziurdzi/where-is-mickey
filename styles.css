@@ -1,6 +1,5 @@
-.mickey {
-  background-size: cover;
-  object-fit: cover;
+* {
+  margin: 0;
 }
 .titre {
   text-align: center;
@@ -9,8 +8,39 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
   background-image: url("assets/d1352e537d804829a915d3ae53a96fa0.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  font-weight: bold;
+  background-color: aliceblue;
+  a {
+    text-decoration: none;
+    margin: auto 1rem;
+
+    background-color: var(--secondary-color);
+    font-size: calc(var(--base-font-size) * 2);
+    border-radius: 10px;
+  }
+}
+footer {
+  background-color: black;
+  height: 2rem;
+  width: 100%;
+  color: #fff;
+  padding-top: 20px;
+  line-height: 2rem;
 }
