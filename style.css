@@ -11,157 +11,116 @@
     margin: 0;
 }
 
+html,
 body {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-
-    header {
-        background-color: var(--primary-color);
-        height: 4rem;
-        margin-top: 0;
-        width: 100%;
-        
-
-        nav {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            height: 100%;
-            font-weight: bold;
-            
-
-            a {
-                text-decoration: none;
-                margin: auto 1rem;
-                
-                background-color: var(--secondary-color);
-                font-size: calc(var(--base-font-size) * 2);
-                border-radius: 10px;
-                
-            }
-        }
-    }
-
-    main {
-        flex: 1;
-        /* display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 80%;
-        gap: 1rem; */
-        background-image: url(images/55e1c0d248a679ad24cc04ea694b78aamobile.jpg);
-        background-size: auto 100%;
-        background-repeat: no-repeat;
-        position: relative;
-       
-
-        h1 {
-            margin-top: 3rem;
-            text-align: center;
-            font-size: calc(var(--base-font-size) * 4);
-            font-family: 'New Walt Disney Font', sans-serif;
-        }
-
-        img {
-            position: absolute;
-            left: 55%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .play {
-            position: absolute;
-            text-decoration: none;
-            font-size: 4rem;
-            bottom: 8%;
-            left: 50%;
-            border: 1px black solid;
-            transform: translate(-50%, -50%);
-            padding: 0.2rem 3rem;
-            background-color: wheat;
-            border-radius: 15px;
-
-        }
-
-
-        /* @media screen and (min-width: 500px){
-            background-image: url("images/55e1c0d248a679ad24cc04ea694b78aa.jpg");
-        } */
-
-
-
-
-
-        /* .first {
-            background-image: url(img/daisy-duck.webp);
-            background-position: -250px 0;
-            background-repeat: no-repeat;
-            background-size: cover;
-           
-        }
-
-        .second {
-            background-image: url(img/Akinator.webp);
-            background-position: -130px 0;
-            background-repeat: no-repeat;
-            background-size: cover;
-            
-        }
-
-        .third {
-            background-image: url(img/Minnie_Mouse_Infobox.webp);
-            background-position: -180px 0;
-            background-repeat: no-repeat;
-            background-size: cover;
-            
-        }
-
-        .fourth {
-            background-image: url(img/donald.png);
-            background-position: -130px 0;
-            background-repeat: no-repeat;
-            background-size: cover;
-
-            &:hover {
-                background-position: -190px 0;
-            }
-             */
-        /* } */
-
-        /* .mainImg {
-            
-
-            background-image: url(img/55e1c0d248a679ad24cc04ea694b78aa.jpg);
-            background-size: 100%;
-            background-repeat: no-repeat;
-            
-            
-            img {
-                filter: blur(8px);
-                width: 200px;
-                height: auto;
-                margin: 50% 50%;
-            } */
-
-
-
-       
-
-
-    }
 }
 
-footer {
-    background-color: black;
-    height: 4rem;
-    width: 100%;
-    color: var(--secondary-color);
-    display: flex;
-    align-items: center;
-    
-    p {
-        padding-left: 1rem;
+body {
+    background-image: url(images/55e1c0d248a679ad24cc04ea694b78aamobile.jpg);
+    background-size: cover;
+
+    background-repeat: no-repeat;
+
+    main {
+        height: 100%;
+
+        @media screen and (min-width: 900px) {
+            display: grid;
+            grid-template-columns: 1fr 65%;
+
+        }
+
+        .columns-container {
+            /* display: none; */
+
+            @media screen and (min-width: 900px) {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+
+                #first {
+                    background-color: red;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                #second {
+                    background-color: yellow;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                #third {
+                    background-color: aquamarine;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                #fourth {
+                    background-color: blanchedalmond;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-rows: 20% 2fr 9fr;
+            grid-auto-columns: minmax(10%, auto);
+            height: 100%;
+
+            @media screen and (min-width:900px) {
+                background-image: url(images/55e1c0d248a679ad24cc04ea694b78aa.jpg);
+                background-size: cover;
+            }
+
+            .connexion {
+                text-align: center;
+                text-decoration: none;
+                border: 1px white solid;
+                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+                border-radius: 15px;
+                color: white;
+                font-weight: 900;
+                font-size: 2rem;
+                background-color: #F2E189;
+                width: 10rem;
+                justify-self: end;
+                height: 3rem;
+                margin: 1em 1em 0 0;
+            }
+
+            h1 {
+                text-align: center;
+                align-self: center;
+                font-size: 5rem;
+                font-family: 'New Walt Disney Font', sans-serif;
+
+            }
+
+            .play-button {
+                align-self: center;
+                justify-self: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px white solid;
+                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+                background-color: #F2E189;
+                width: 30%;
+                height: 3rem;
+                text-decoration: none;
+                color: white;
+                font-weight: 900;
+                font-size: 2rem;
+                /* Supprime le soulignement du texte */
+
+
+            }
+        }
+
     }
+
 }
