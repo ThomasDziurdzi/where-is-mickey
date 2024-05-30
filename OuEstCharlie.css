@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+    overflow: auto;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+}
+
+/* ajout nav */
+nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0rem;
+    color: #fff;
+    margin-top: 10px;
+  }
+
+  nav :hover {
+    color: white;
+  }
+
+  nav > a.logo {
+    display: none;
+    color: white;
+    text-decoration: none;
+  }
+
+  nav > ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  nav > ul > li > a {
+    color: black;
+    text-decoration: none;
+    padding: 1rem;
+  }
+
+  nav > ul > li > a > i {
+    font-size: 3em;
+  }
+
+  nav > ul > li > a > span {
+    display: none;
+  }
+
+.background-container {
+    background-image: url("./Images_OuEstCharlie/ou_est_charlie.jpg");
+    background-size: contain;
+    min-width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#charlie {
+    position: absolute;
+    top: 40%;
+    left: 7%;
+    width: 4%;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+#herculeFoireux {
+    position: absolute;
+    top: 81%;
+    left: 91%;
+    width: 20%;
+    height: auto;
+    transform: translate(-50%, -50%);  
+}
+/* pour masquer la boîte de dialogue */
+.hidden {
+  display: none;
+}
+
+/* style de la boîte de dialogue */
+#dialogBoxHercule {
+  position: fixed;
+  top: 60%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  background-color: #7eb08fc1;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Nunito';
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0,);
+  z-index: 1000;
+}
