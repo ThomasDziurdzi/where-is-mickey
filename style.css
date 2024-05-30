@@ -20,15 +20,15 @@ body {
 body {
     background-image: url(images/55e1c0d248a679ad24cc04ea694b78aamobile.jpg);
     background-size: cover;
-
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
 
     main {
         height: 100%;
-
         @media screen and (min-width: 900px) {
             display: grid;
-            grid-template-columns: 1fr 65%;
+            grid-template-columns: 1fr 70%;
 
         }
 
@@ -37,33 +37,59 @@ body {
 
             @media screen and (min-width: 900px) {
                 display: grid;
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(6, 1fr);
 
                 #first {
-                    background-color: red;
+                    background-image: url(images/herculecutcolumn.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
                     height: 100%;
                     width: 100%;
                 }
 
                 #second {
-                    background-color: yellow;
+                    background-image: url(images/minniecutcolumns.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
                     height: 100%;
                     width: 100%;
                 }
 
                 #third {
-                    background-color: aquamarine;
+                    background-image: url(images/bugscutcolumns.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
                     height: 100%;
                     width: 100%;
                 }
 
                 #fourth {
-                    background-color: blanchedalmond;
+                    background-image: url(images/daffycutcolumns.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+                
+                #fifth {
+                    background-image: url(images/franklinsdfcutcolumns.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                #sixth {
+                    background-image: url(images/porkcutcolumns.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
                     height: 100%;
                     width: 100%;
                 }
             }
+            
         }
+
 
         .menu-container {
             display: grid;
@@ -122,5 +148,4 @@ body {
         }
 
     }
-
 }
