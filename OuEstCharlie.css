@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 
 * {
     box-sizing: border-box;
 }
+
 
 html, body {
     height: 100%;
@@ -85,4 +88,25 @@ nav {
     width: 20%;
     height: auto;
     transform: translate(-50%, -50%);  
+}
+/* pour masquer la boîte de dialogue */
+.hidden {
+  display: none;
+}
+
+/* style de la boîte de dialogue */
+#dialogBoxHercule {
+  position: fixed;
+  top: 60%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  background-color: #7eb08fc1;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Nunito';
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0,);
+  z-index: 1000;
 }
