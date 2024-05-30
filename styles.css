@@ -1,6 +1,15 @@
 * {
   margin: 0;
 }
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .titre {
   font-family: "Courier New", Courier, monospace;
   text-align: center;
@@ -8,6 +17,14 @@
   font-size: 70px;
   height: 25rem;
   line-height: 25rem;
+  /* transition: all 10s linear;  */
+  /* transition-duration: 2s; */
+  animation: zoomIn 2s ease-in-out;
+}
+
+.titre :hover {
+  zoom: 10000;
+  transform: scale(2) rotate(180deg);
 }
 
 body {
@@ -32,7 +49,7 @@ nav {
   background-color: black;
   padding: 2%;
   border: none;
-  color: aliceblue;
+  color: white;
   padding: 15px 32px;
 
   .bouton {
@@ -55,4 +72,9 @@ footer {
   color: #fff;
   padding-top: 20px;
   line-height: 2rem;
+}
+
+.audiogta {
+  display: none;
+  transition: all;
 }
