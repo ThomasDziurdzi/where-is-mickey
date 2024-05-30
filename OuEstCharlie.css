@@ -13,6 +13,50 @@ body {
     background-color: black;
 }
 
+/* ajout nav */
+nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0rem;
+    color: #fff;
+    margin-top: 10px;
+  }
+
+  nav :hover {
+    color: white;
+  }
+
+  nav > a.logo {
+    display: none;
+    color: white;
+    text-decoration: none;
+  }
+
+  nav > ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  nav > ul > li > a {
+    color: black;
+    text-decoration: none;
+    padding: 1rem;
+  }
+
+  nav > ul > li > a > i {
+    font-size: 3em;
+  }
+
+  nav > ul > li > a > span {
+    display: none;
+  }
+
 .background-container {
     background-image: url("./Images_OuEstCharlie/ou_est_charlie.jpg");
     background-size: contain;

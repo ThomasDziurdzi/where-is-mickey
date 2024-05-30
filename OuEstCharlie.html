@@ -5,11 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Where Is Mickey Game - Page Ou est Charlie</title>
     <link rel="stylesheet" href="OuEstCharlie.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 </head>
 <body>
+    <!-- ajout des boutons de navigation home -->
+    
+    <!-- container pour les images de background - l'image de fond est dans le css dans le container -->
     <div class="background-container">
-            <img id="herculeFoireux" src="./Images_OuEstCharlie/smartpinguin-detoure.png" alt="personnage Hercule foireux">
+        <nav>
+            <a href="#" class="logo">Logo</a>
+            <ul>
+              <li>
+                <a href="#">
+                  <i class="bi bi-house-fill"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bi bi-images"></i>
+                  <span>Gallery</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bi bi-envelope-fill"></i>
+                  <span>Contact</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+            <img id="herculeFoireux" src="./Images_OuEstCharlie/smartpinguin-Photoroom.png-Photoroom.png" alt="personnage Hercule foireux">
             <img id="charlie" src="./Images_OuEstCharlie/homme.png" alt="personnage Charlie caché">
+    </div>
+    <!-- ajout code pour boite dialogue Hercule -->
+    <button id="herculeButton">Par ici !</button>
+    <div id="dialogBoxHercule" class="hidden">
+        <p>Bravo! Tu as presque fini ton enquête. Il te reste à trouver l'assassin dans cette foule</p>
     </div>
 </body>
 </html>
