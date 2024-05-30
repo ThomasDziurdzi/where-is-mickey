@@ -18,39 +18,8 @@ body {
   flex-direction: column;
   margin: 0;
   min-height: 100vh;
-  background-color: black;
 }
 
-header {
-  background: linear-gradient(#000000, #000000);
-  height: 5vh;
-  width: 100%;
-  z-index: 1;
-}
-
-nav {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px;
-  width: 100%;
-}
-
-.home-button {
-  background-color: black;
-  color: white;
-  border: 2px solid white;
-  padding: 5px 30px 5px 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  font-family: "New Walt Disney Font", sans-serif;
-  font-size: 15px;
-}
-.home-button:hover {
-  background-color: white;
-  color: black;
-}
 main {
   flex: 1;
   display: flex;
@@ -58,31 +27,85 @@ main {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-}
-.container {
-  background-image: url(images/cartoon_landscape.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  color: white;
-}
 
-.labels {
-  margin-bottom: 19rem;
-  margin-left: 68rem;
-}
+  .container {
+    background-image: url(images/cartoon_landscape.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
 
-.label {
-  font-size: 7rem;
-  margin-bottom: 0.5rem;
-  color: black;
+    nav {
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0rem;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    nav :hover {
+      color: white;
+    }
+
+    nav > a.logo {
+      display: none;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav > ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    nav > ul > li > a {
+      color: black;
+      text-decoration: none;
+      padding: 1rem;
+    }
+
+    nav > ul > li > a > i {
+      font-size: 3em;
+    }
+
+    nav > ul > li > a > span {
+      display: none;
+    }
+
+    .labels {
+      margin-bottom: 5rem;
+      margin-left: 68rem;
+
+      .label {
+        font-size: 7rem;
+        margin-bottom: 10rem;
+        color: black;
+      }
+    }
+    .mickey {
+      position: absolute;
+      top: 66%;
+      right: 70%;
+      max-width: 50%;
+      height: auto;
+    }
+  }
+  p {
+    font-family: "New Walt Disney Font", sans-serif;
+  }
 }
 
 .Champion {
@@ -92,25 +115,4 @@ main {
   border-radius: 20px;
   border: solid black;
   margin: 2%;
-}
-
-.mickey {
-  position: absolute;
-  top: 63vh;
-  right: 31vh;
-  max-width: 50%;
-  height: auto;
-}
-
-footer {
-  background-color: black;
-  color: white;
-  height: 5vh; /* Utiliser des unités relatives */
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-p {
-  padding-left: 20px;
 }
