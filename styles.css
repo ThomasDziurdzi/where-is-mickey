@@ -35,36 +35,76 @@ body {
 
 main {
   flex: 1;
-  background-image: url("assets/d1352e537d804829a915d3ae53a96fa0.png");
+  background-image: url("images/d1352e537d804829a915d3ae53a96fa0.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-nav {
-  display: flex;
-  justify-content: flex-end;
   align-items: center;
-  height: 100%;
-  font-weight: bold;
-  background-color: black;
-  padding: 2%;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-
-  .bouton {
-    border-radius: 12px;
-  }
-
-  a {
-    text-decoration: none;
-    margin: auto 1rem;
-
-    background-color: var(--secondary-color);
-    font-size: calc(var(--base-font-size) * 2);
-    border-radius: 10px;
-  }
 }
+
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0rem;
+  color: #fff;
+  margin-top: 10px;
+}
+
+nav :hover {
+  color: red;
+}
+
+nav > a.logo {
+  display: none;
+  color: white;
+  text-decoration: none;
+}
+
+nav > ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+nav > ul > li > a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+nav > ul > li > a > i {
+  font-size: 3em;
+}
+
+nav > ul > li > a > span {
+  display: none;
+}
+
+.bouton {
+  border-radius: 12px;
+  height: 4rem;
+  align-items: center;
+  line-height: 1rem;
+  color: #fff;
+  background-color: black;
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+  margin: auto 1rem;
+  align-items: center;
+
+  background-color: var(--secondary-color);
+  font-size: calc(var(--base-font-size) * 2);
+  border-radius: 10px;
+}
+
 footer {
   background-color: black;
   height: 2rem;
@@ -76,5 +116,32 @@ footer {
 
 .audiogta {
   display: none;
-  transition: all;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popupcontain {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding: 2em;
+  border: 100px;
+}
+
+footer {
+  transition: transform 0.5s ease;
+  transform: translateX(0);
 }
