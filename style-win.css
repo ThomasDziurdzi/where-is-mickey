@@ -1,0 +1,147 @@
+@import url("https://fonts.cdnfonts.com/css/new-walt-disney-font");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "New Walt Disney Font", sans-serif;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .container {
+    background-image: url(images/cartoon_landscape.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    text-align: center;
+    color: white;
+
+    nav {
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0rem;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    nav :hover {
+      color: white;
+    }
+
+    nav > a.logo {
+      display: none;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav > ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    nav > ul > li > a {
+      color: black;
+      text-decoration: none;
+      padding: 1rem;
+    }
+
+    nav > ul > li > a > i {
+      font-size: 3em;
+    }
+
+    nav > ul > li > a > span {
+      display: none;
+    }
+
+    .labels {
+      margin-bottom: 5rem;
+      margin-left: 68rem;
+
+      .label {
+        font-size: 7rem;
+        margin-bottom: 2rem;
+        right: 2;
+        color: black;
+      }
+    }
+    .mickey {
+      position: absolute;
+      top: 62%;
+      right: 70%;
+      max-width: 50%;
+      height: auto;
+    }
+
+    .pictures {
+      border-radius: 50% 50% 50;
+    }
+  }
+  p {
+    font-family: "New Walt Disney Font", sans-serif;
+    color: black;
+  }
+}
+
+.Champion {
+  font-size: 30px;
+  color: black;
+  background-color: white;
+  border-radius: 20px;
+  border: solid black;
+  margin: 60px;
+}
+
+.pictures {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: -60;
+  margin-top: 160px;
+
+  img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: 2px;
+    border: solid 8px #000000;
+    transition: transform 0.5s ease-in-out;
+  }
+}
+
+img:hover {
+  transform: rotate(360deg);
+  border-color: rgb(255, 251, 0);
+}
