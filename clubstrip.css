@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+
+
+
+    main {
+        flex: 1;
+        background-image: url(strip\ tease\ club.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        min-height: 100%;
+        height: auto;
+
+        nav :hover {
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 0rem;
+            color: #fff;
+            margin-top: 10px;
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                list-style: none;
+                padding: 0;
+
+                li {
+                    margin: 1rem;
+
+                    a {
+                        display: flex;
+                        list-style: none;
+                        padding: 0;
+                        color: rgb(241, 240, 240);
+
+                        i {
+                            font-size: 3em;
+                        }
+
+                        span {
+                            display: none;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        nav :hover {
+            color: red;
+        }
+
+        section {
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            position: fixed;
+
+
+
+            img {
+
+                height: auto;
+                cursor: pointer;
+            }
+
+            #minnie {
+                align-self: flex-end;
+                max-height: 80%;
+                margin-right: 50%;
+                margin-bottom: 20%;
+
+            }
+
+            #pork {
+                align-self: flex-end;
+                max-height: 35%;
+                margin-left: 20%;
+                margin-bottom: 20%;
+            }
+
+            #lapin {
+                align-self: center;
+                max-height: 40%;
+                margin-left: 30%;
+                margin-bottom: 10%;
+            }
+
+            #canard {
+                align-self: center;
+                max-height: 25%;
+                margin-bottom: 45%;
+                margin-left: 30%;
+                transform: scaleX(-1);
+            }
+
+            #pingouin {
+                align-self: flex-end;
+                max-height: 50%;
+                margin-right: 20%;
+                margin-bottom: 20%;
+            }
+        }
+
+    }
+
+    footer {}
+}
