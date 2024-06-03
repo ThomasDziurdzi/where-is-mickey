@@ -27,7 +27,6 @@
   */
 }
 
-
 html,
 body {
   height: 100%;
@@ -58,12 +57,11 @@ body {
     /*margin vertical à 0,
        permet de centrer l'image avec auto*/
 
-
     .titre {
       position: absolute;
-      top:30%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 10%;
+      left: 37%;
+
       font-family: "Courier New", Courier, monospace;
       text-align: center;
       color: red;
@@ -73,64 +71,55 @@ body {
       /* transition: all 10s linear;  */
       /* transition-duration: 2s; */
       animation: zoomIn 2s ease-in-out;
-
-        &:hover {
-          zoom: 1.3;
-          transform: scale(2) rotate(180deg);
-        }
-      }
-
-
-
-
-      /*---------NAV------*/
-      nav {
-        position: absolute;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 0rem;
-        color: #fff;
-        margin-top: 10px;
-      }
-
-      nav :hover {
-        color: red;
-      }
-
-      nav>a.logo {
-        display: none;
-        color: white;
-        text-decoration: none;
-      }
-
-      nav>ul {
-        display: flex;
-        list-style: none;
-        padding: 0;
-      }
-
-      nav>ul>li>a {
-        color: #E6BF88;
-        text-decoration: none;
-        padding: 1rem;
-      }
-
-      nav>ul>li>a>i {
-        font-size: 3em;
-      }
-
-      nav>ul>li>a>span {
-        display: none;
-      }
-
-      /*----FIN NAV-----*/
     }
 
+    /*---------NAV------*/
+    nav {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0rem;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    nav :hover {
+      color: red;
+    }
+
+    nav > a.logo {
+      display: none;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav > ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    nav > ul > li > a {
+      color: #e6bf88;
+      text-decoration: none;
+      padding: 1rem;
+    }
+
+    nav > ul > li > a > i {
+      font-size: 3em;
+    }
+
+    nav > ul > li > a > span {
+      display: none;
+    }
+
+    /*----FIN NAV-----*/
   }
+}
 
 /*-------------------------------------------------------*/
 /*--------------------------------------*/
