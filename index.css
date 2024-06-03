@@ -22,8 +22,8 @@ body {
     background-image: url(images/menu/55e1c0d248a679ad24cc04ea694b78aamobile.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    /* display: flex;
-    flex-direction: column; */
+    cursor:url(./images/mickey-la-souris.png) 2 2, pointer;
+    
 
     @media screen and (min-width:900px) {
         background-color: #F0FFFC;
@@ -44,6 +44,7 @@ body {
             @media screen and (min-width: 900px) {
                 display: grid;
                 grid-template-columns: repeat(6, 1fr);
+
 
                 /* .column:hover {
                     filter: grayscale(100%) opacity(20%);
@@ -99,7 +100,7 @@ body {
                 }
 
                 .transition {
-                    transition: all 0.3s ease; 
+                    transition: all 0.3s ease;
                     /* Permet de regler le temps entre le no-filter et le filter */
                 }
             }
