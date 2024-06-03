@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+  /*
+  La propriété box-sizing détermine comment la largeur et 
+  la hauteur totales d'un élément sont calculées.
+
+  Par défaut, box-sizing est défini sur content-box, 
+  ce qui signifie que la largeur et la hauteur spécifiées 
+  d'un élément n'incluent pas le padding et les bordures. 
+  En conséquence, la taille réelle de l'élément est augmentée 
+  par la largeur des bordures et le padding.
+
+  Lorsque box-sizing est défini sur border-box, 
+  la largeur et la hauteur spécifiées d'un élément incluent 
+  le padding et les bordures. 
+  Cela signifie que la taille totale de l'élément reste la même, 
+  peu importe la quantité de padding ou l'épaisseur 
+  des bordures.
+
+  L'utilisation de * { box-sizing: border-box; } n'est pas 
+  obligatoire, mais c'est une bonne pratique largement adoptée 
+  pour faciliter la gestion des mises en page en CSS. 
+  Elle permet d'éviter les calculs complexes de dimensions 
+  et améliore la consistance de l'apparence des éléments sur 
+  la page.
+
+  */
+}
+
+
+html,
+body {
+  height: 100%;
+  /* On s'assure que la hauteur de notre body prenne toute la hauteur
+  de la page*/
+}
+
+body {
+  margin: 0;
+  background-color: black;
+
+  .background-container {
+    background-image: url("/images/game-over/gameOverBackground.png");
+    background-size: contain;
+    /* Pour contenir l'image dans son intégralité
+      sans l'étirer ou cacher des parties de l'image*/
+    min-width: 194vh;
+    max-width: 194vh;
+    /* Pour coller l'image au bord du viewport*/
+    min-height: 100vh;
+    max-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /*Tous les enfants de cette image se placeront 
+      en fonction de cette image*/
+    margin: 0 auto;
+    /*margin vertical à 0,
+       permet de centrer l'image avec auto*/
+
+
+    .titre {
+      position: absolute;
+      top:30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: "Courier New", Courier, monospace;
+      text-align: center;
+      color: red;
+      font-size: 4.375rem;
+      height: 25rem;
+      line-height: 25rem;
+      /* transition: all 10s linear;  */
+      /* transition-duration: 2s; */
+      animation: zoomIn 2s ease-in-out;
+
+        &:hover {
+          zoom: 1.3;
+          transform: scale(2) rotate(180deg);
+        }
+      }
+
+
+
+
+      /*---------NAV------*/
+      nav {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0rem;
+        color: #fff;
+        margin-top: 10px;
+      }
+
+      nav :hover {
+        color: red;
+      }
+
+      nav>a.logo {
+        display: none;
+        color: white;
+        text-decoration: none;
+      }
+
+      nav>ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+      }
+
+      nav>ul>li>a {
+        color: #E6BF88;
+        text-decoration: none;
+        padding: 1rem;
+      }
+
+      nav>ul>li>a>i {
+        font-size: 3em;
+      }
+
+      nav>ul>li>a>span {
+        display: none;
+      }
+
+      /*----FIN NAV-----*/
+    }
+
+  }
+
+/*-------------------------------------------------------*/
+/*--------------------------------------*/
+
+.audiogta {
+  display: none;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popupcontain {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding: 2em;
+  border: 100px;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bouton {
+  border-radius: 12px;
+  height: 4rem;
+  align-items: center;
+  line-height: 1rem;
+  color: #fff;
+  background-color: black;
+  padding: 1rem;
+}

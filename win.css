@@ -1,0 +1,191 @@
+@import url("https://fonts.cdnfonts.com/css/new-walt-disney-font");
+
+* {
+  box-sizing: border-box;
+  /*
+  La propriété box-sizing détermine comment la largeur et 
+  la hauteur totales d'un élément sont calculées.
+
+  Par défaut, box-sizing est défini sur content-box, 
+  ce qui signifie que la largeur et la hauteur spécifiées 
+  d'un élément n'incluent pas le padding et les bordures. 
+  En conséquence, la taille réelle de l'élément est augmentée 
+  par la largeur des bordures et le padding.
+
+  Lorsque box-sizing est défini sur border-box, 
+  la largeur et la hauteur spécifiées d'un élément incluent 
+  le padding et les bordures. 
+  Cela signifie que la taille totale de l'élément reste la même, 
+  peu importe la quantité de padding ou l'épaisseur 
+  des bordures.
+
+  L'utilisation de * { box-sizing: border-box; } n'est pas 
+  obligatoire, mais c'est une bonne pratique largement adoptée 
+  pour faciliter la gestion des mises en page en CSS. 
+  Elle permet d'éviter les calculs complexes de dimensions 
+  et améliore la consistance de l'apparence des éléments sur 
+  la page.
+
+  */
+}
+
+html,
+body {
+  height: 100%;
+
+  font-family: "New Walt Disney Font", sans-serif;
+
+}
+
+body {
+  margin: 0;
+  background-color: black;
+
+  .container {
+    /* background-image: url(/images/win/cartoon_landscape.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    text-align: center;
+    color: white; */
+
+
+    background-image: url("/images/win/cartoon_landscape.png");
+    background-size: contain;
+    /* Pour contenir l'image dans son intégralité
+      sans l'étirer ou cacher des parties de l'image*/
+    min-width: 194vh;
+    max-width: 194vh;
+    /* Pour coller l'image au bord du viewport*/
+    min-height: 100vh;
+    max-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /*Tous les enfants de cette image se placeront 
+      en fonction de cette image*/
+    margin: 0 auto;
+    /*margin vertical à 0,
+       permet de centrer l'image avec auto*/
+
+
+    nav {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0rem;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    nav :hover {
+      color: white;
+    }
+
+    nav>a.logo {
+      display: none;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav>ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    nav>ul>li>a {
+      color: black;
+      text-decoration: none;
+      padding: 1rem;
+    }
+
+    nav>ul>li>a>i {
+      font-size: 3em;
+    }
+
+    nav>ul>li>a>span {
+      display: none;
+    }
+
+    .labels {
+      margin-bottom: 5rem;
+      margin-left: 68rem;
+
+      .label {
+        font-size: 7rem;
+        margin-bottom: 2rem;
+        right: 2;
+        color: black;
+      }
+    }
+
+    .mickey {
+      position: absolute;
+      width: 15%;
+      bottom: 18.5%;
+      left: 20%;
+    }
+
+    .pictures {
+      border-radius: 50% 50% 50;
+    }
+  }
+
+  p {
+    position: absolute;
+      width: 10%;
+      bottom: 14%;
+      left: 21.5%;
+    font-family: "New Walt Disney Font", sans-serif;
+    color: black;
+  }
+
+
+  .Champion {
+    font-size: 30px;
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    border: solid black;
+    margin: 60px;
+  }
+
+  .pictures {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: -60;
+    margin-top: 160px;
+
+    img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin-top: 2px;
+      border: solid 8px #000000;
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+
+  img:hover {
+    transform: rotate(360deg);
+    border-color: rgb(255, 251, 0);
+  }
+
+}
