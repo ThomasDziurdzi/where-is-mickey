@@ -38,6 +38,7 @@ body {
   de la page*/
 }
 
+
 body {
   margin: 0;
   background-color: black;
@@ -132,12 +133,12 @@ body {
 }
 
 /* pour masquer la boîte de dialogue */
-/* .hidden {
+.hidden {
   display: none;
 } */
 
 /* style de la boîte de dialogue */
-/* #dialogBoxHercule {
+#dialogBoxHercule {
   position: fixed;
   top: 60%;
   left: 65%;
@@ -151,4 +152,6 @@ body {
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, );
   z-index: 1000;
-} */
+}   /*pour mettre la boîte en premier
+
+
