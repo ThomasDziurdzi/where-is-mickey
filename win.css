@@ -34,7 +34,6 @@ body {
   height: 100%;
 
   font-family: "New Walt Disney Font", sans-serif;
-
 }
 
 body {
@@ -60,7 +59,6 @@ body {
     text-align: center;
     color: white; */
 
-
     background-image: url("/images/win/cartoon_landscape.png");
     background-size: contain;
     /* Pour contenir l'image dans son intégralité
@@ -79,7 +77,6 @@ body {
     /*margin vertical à 0,
        permet de centrer l'image avec auto*/
 
-
     nav {
       position: absolute;
       display: flex;
@@ -97,48 +94,51 @@ body {
       color: white;
     }
 
-    nav>a.logo {
+    nav > a.logo {
       display: none;
       color: white;
       text-decoration: none;
     }
 
-    nav>ul {
+    nav > ul {
       display: flex;
       list-style: none;
       padding: 0;
     }
 
-    nav>ul>li>a {
+    nav > ul > li > a {
       color: black;
       text-decoration: none;
       padding: 1rem;
     }
 
-    nav>ul>li>a>i {
+    nav > ul > li > a > i {
       font-size: 3em;
     }
 
-    nav>ul>li>a>span {
+    nav > ul > li > a > span {
       display: none;
     }
 
     .labels {
-      margin-bottom: 5rem;
-      margin-left: 68rem;
+      margin-bottom: 20rem;
+      margin-left: 90rem;
 
       .label {
-        font-size: 7rem;
-        margin-bottom: 2rem;
-        right: 2;
+        font-size: 5rem;
+        margin-bottom: 6rem;
         color: black;
+        margin: 0;
+
+        text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05),
+          -10px 20px 5px rgba(0, 0, 0, 0.05);
       }
     }
 
     .mickey {
       position: absolute;
       width: 15%;
-      bottom: 18.5%;
+      bottom: 15%;
       left: 20%;
     }
 
@@ -149,21 +149,23 @@ body {
 
   p {
     position: absolute;
-      width: 10%;
-      bottom: 14%;
-      left: 21.5%;
+    width: 10%;
+    bottom: 14%;
+    left: 2%;
     font-family: "New Walt Disney Font", sans-serif;
     color: black;
   }
 
-
   .Champion {
-    font-size: 30px;
+    font-size: 40px;
     color: black;
     background-color: white;
     border-radius: 20px;
     border: solid black;
-    margin: 60px;
+    margin-bottom: 60px;
+    margin-top: 4.3rem;
+    text-align: center;
+    width: 80%;
   }
 
   .pictures {
@@ -175,9 +177,10 @@ body {
 
     img {
       border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      margin-top: 2px;
+      width: 110px;
+      height: 110px;
+      margin: 2px;
+      margin-left: -3rem;
       border: solid 8px #000000;
       transition: transform 0.5s ease-in-out;
     }
@@ -187,5 +190,4 @@ body {
     transform: rotate(360deg);
     border-color: rgb(255, 251, 0);
   }
-
 }
