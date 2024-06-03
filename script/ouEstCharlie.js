@@ -1,3 +1,4 @@
+//attendre que la page soit chargée
 document.addEventListener('DOMContentLoaded', function() {
     // Sélectionne les éléments du DOM
     const herculeButton = document.getElementById('herculeButton');
