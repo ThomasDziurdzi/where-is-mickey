@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   bulle.classList.remove("hidden");
 
   // Ajouter l'événement pour fermer la bulle
-  document.querySelector(".bulle .close").addEventListener("click", function () {
+  document.querySelector(".close").addEventListener("click", function () {
     bulle.classList.add("hidden");
   });
 });
