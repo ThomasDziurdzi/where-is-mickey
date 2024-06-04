@@ -9,7 +9,7 @@
     <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon" />
 </head>
 <body>
-    <!-- container pour les images de background - l'image de fond est dans le css dans le container -->
+    <!-- div container pour les images de background - l'image de fond est dans le css dans le container -->
     <div class="background-container">
         <nav>
             <a href="#" class="logo">Logo</a>
@@ -28,11 +28,15 @@
           </nav>
           <img id="charlie" src="./images/charlie/charlie.png">
           <img id="herculeFoireux" src="./images/hercule.png" alt="personnage Hercule foireux">
-    </div>
-    <!-- ajout boîte dialogue Hercule -->
-    <div id="dialogBoxHercule" class="hidden">
-        <p>Bravo! Tu as presque fini ton enquête.<br> Il te reste à trouver l'assassin dans cette foule</p>
-    </div>
+      </div>
+
+      <!-- div pour boîte dialogue Hercule -->
+      <div id="dialogBoxHercule" class="hidden">
+          <span class="close">&times;</span>
+          <p>Bravo! Tu as presque fini ton enquête.<br> 
+            Il te reste à trouver l'assassin dans cette foule</p>
+      </div>
+      <div class="overlay hidden"></div>
     <script src="./script/ouEstCharlie.js"></script>
 </body>
 </html>
