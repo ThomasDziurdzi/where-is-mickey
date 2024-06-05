@@ -1,3 +1,5 @@
+@import url("https://fonts.cdnfonts.com/css/new-walt-disney-font");
+
 * {
   box-sizing: border-box;
 }
@@ -158,6 +160,7 @@ body {
   #pingouin {
     /*Ne pas toucher, reglé à l'identique sur toutes
       les pages!*/
+
     position: absolute;
     bottom: 0;
     /* Colle l'image tout en bas de la div parente*/
@@ -165,4 +168,5 @@ body {
     width: 20%;
     height: auto;
   }
+
 }
