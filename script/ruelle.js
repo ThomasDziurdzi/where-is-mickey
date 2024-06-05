@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Show the penguin message when the penguin image is clicked
-    penguinImage.addEventListener('click', () => {
+    window.addEventListener('load', () => {
         penguinPopup.style.display = 'block';
     });
 
