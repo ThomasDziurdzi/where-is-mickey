@@ -16,15 +16,37 @@ document.addEventListener('DOMContentLoaded', function() {
             overlay.classList.toggle('hidden');
         });
     });
+    //survol image Charlie
     const charlieImage = document.getElementById('charlie');
     const zoomSound = document.getElementById('zoomSound')
     
     charlieImage.addEventListener('mouseover', function() {
         zoomSound.currentTime = 0 //commencer à jouer depuis le début
         zoomSound.play();
+
         //Arrêter le son après une durée spécifique (en millisecondes)
         setTimeout(function() {
             zoomSound.pause();
-        }, 4000);
+        }, 2000);
+    });
+    
+    //Déclencher la modal Charlie lorsque la musique se termine
+    zoomSound.addEventListener('ended', function() {
+        const modalCharlie = document.getElementById('dialogBoxCharlie');
+        const closeModalCharlie = document.querySelector('.close-charlie-modal');
+        
+        modalCharlie.classList.remove('hidden');
+        modalCharlie.style.display = 'block';
+        //Fermer le modal
+        closeModalCharlie.addEventListener('click', function() {
+           modalCharlie.style.display = 'none';
+        });
+
+        //Fermer la modal quand on clique en dehors de la modal
+        window.addEventListener('click', function(event) {
+            if (event.target == modalCharlie) {
+                modalCharlie.style.display = 'none';
+            }
+        }); 
     });
 });
