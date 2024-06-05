@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll(".image-container img");  // Sélectionne toutes les images dans les conteneurs
     const carSound = document.getElementById("car-sound");  // Sélectionne l'élément audio pour la voiture
     const knifeSound = document.getElementById("knife-sound");  // Sélectionne l'élément audio pour le couteau
-    const gunSound = document.getElementById("gun-sound");  // Sélectionne l'élément audio pour le pistolet
-
+    const gunSound = document.getElementById("gun-sound");
     // Vérifie si les audios sont prêts à être joués
     carSound.addEventListener('canplaythrough', () => {
         console.log("Car audio is ready to play");
@@ -18,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     gunSound.addEventListener('canplaythrough', () => {
-        console.log("Gun audio is ready to play");
+        console.log("gun audio is ready to play");
     });
 
     // Gère les erreurs de chargement de l'audio
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     gunSound.addEventListener('error', (e) => {
-        console.error("Error loading gun audio", e);
+        console.error("Error loading gun audio")
     });
 
     // Variable pour suivre si l'utilisateur a interagi avec la page
@@ -57,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (image.id !== "garbage") {
             image.addEventListener("mouseover", function () {
                 image.style.transition = "transform 0.3s ease";  // Applique une transition à la transformation CSS
-
                 if (image.id === "knife" && !knifeEffectApplied) {
                     image.style.transform = "scale(2.5)";  // Agrandit l'image du couteau
                     knifeEffectApplied = true;  // Marque que l'effet a été appliqué pour le couteau
@@ -86,53 +84,49 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         console.log("User has not interacted with the page yet");
                     }
-                } else if (image.id === "gun" && !gunEffectApplied) {
-                    image.style.transform = "scale(2.5)";  // Agrandit l'image du pistolet
-                    gunEffectApplied = true;  // Marque que l'effet a été appliqué pour le pistolet
-                    sessionStorage.setItem('gunEffectApplied', 'true');  // Enregistre l'état dans sessionStorage
-                    if (userInteracted) {
-                        gunSound.currentTime = 0;  // Réinitialise le son à partir du début
-                        gunSound.play().then(() => {
-                            console.log("Playing gun sound");
-                        }).catch(error => {
-                            console.error("Error playing gun sound", error);
-                        });
-                    } else {
-                        console.log("User has not interacted with the page yet");
-                    }
-                } else if (image.id === "bag" || image.id === "sandwich" || image.id === "launch") {
-                    image.style.transform = "scale(2.5)";  // Agrandit ces images spécifiques
-                } else {
-                    image.style.transform = "scale(1.2)";  // Agrandit les autres images de manière standard
-                }
-            });
 
-            image.addEventListener("mouseout", function () {
-                image.style.transition = "transform 0.3s ease";  // Applique une transition à la transformation CSS
-                if (image.id === "car" && carEffectApplied) {
-                    setTimeout(() => {
-                        image.style.transform = "rotate(0deg)";  // Réinitialise l'angle de rotation pour la voiture
-                    }, 300);  // Ajoute un délai pour permettre de voir l'effet de réinitialisation
-                } else if (image.id === "knife" && knifeEffectApplied) {
-                    setTimeout(() => {
-                        image.style.transform = "scale(1)";  // Réinitialise la taille du couteau
-                    }, 300);  // Ajoute un délai pour permettre de voir l'effet de réinitialisation
-                } else if (image.id === "gun" && gunEffectApplied) {
-                    setTimeout(() => {
-                        image.style.transform = "scale(1)";  // Réinitialise la taille du pistolet
-                    }, 300);  // Ajoute un délai pour permettre de voir l'effet de réinitialisation
-                } else if (image.id === "bag" || image.id === "sandwich" || image.id === "launch") {
-                    setTimeout(() => {
-                        image.style.transform = "scale(1)";  // Réinitialise la taille de ces images spécifiques
-                    }, 300);  // Ajoute un délai pour permettre de voir l'effet de réinitialisation
-                } else {
-                    image.style.transform = "scale(1)";  // Réinitialise la taille des autres images
-                }
-            });
+                }else if (image.id === "gun" && !gunEffectApplied) {
+                        image.style.transform = "scale(2.5)";  // Agrandit l'image du pistolet
+                        gunEffectApplied = true;  // Marque que l'effet a été appliqué pour le pistolet
+                        sessionStorage.setItem('gunEffectApplied', 'true');  // Enregistre l'état dans sessionStorage
+                        if (userInteracted) {
+                            gunSound.currentTime = 0;  // Réinitialise le son à partir du début
+                            gunSound.play().then(() => {
+                                console.log("Playing gun sound");
+                            }).catch(error => {
+                                console.error("Error playing gun sound", error);
+                            });
+                        } else {
+                            console.log("User has not interacted with the page yet");
+                        }
+        } else if (image.id === "gun" || image.id === "bag" || image.id === "sandwich" || image.id === "launch" || image.id === "knife") {
+            image.style.transform = "scale(2.5)";  // Agrandit ces images spécifiques
+        } else {
+            image.style.transform = "scale(1.2)";  // Agrandit les autres images de manière standard
         }
     });
-});
 
+    image.addEventListener("mouseout", function () {
+        image.style.transition = "transform 0.3s ease";  // Applique une transition à la transformation CSS
+        if (image.id === "car" && carEffectApplied) {
+            setTimeout(() => {
+                image.style.transform = "rotate(0deg)";  // Réinitialise l'angle de rotation pour la voiture
+            }, 300);  // Ajoute un délai pour permettre de voir l'effet de réinitialisation
+        } else if (image.id === "knife" && knifeEffectApplied) {
+            setTimeout(() => {
+                image.style.transform = "scale(1)";  // Réinitialise la taille du couteau
+            }, 300);  // Ajoute un délai pour permettre de voir l'effet de réinitialisation
+        } else if (image.id === "gun" || image.id === "bag" || image.id === "sandwich" || image.id === "launch") {
+            setTimeout(() => {
+                image.style.transform = "scale(1)";  // Réinitialise la taille de ces images spécifiques
+            }, 300);  // Ajoute un délai pour permettre de voir l'effet de réinitialisation
+        } else {
+            image.style.transform = "scale(1)";  // Réinitialise la taille des autres images
+        }
+    });
+}
+    });
+});
 
 
 
