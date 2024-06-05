@@ -157,8 +157,8 @@ body {
 /* style de la boîte de dialogue */
 #dialogBoxHercule {
   position: fixed;
-  top: 60%;
-  left: 65%;
+  top: 50%;
+  left: 55%;
   transform: translate(-50%, -50%);
   background-color: var(--modalBackgound);
   color: var(--modalColor);
@@ -177,6 +177,15 @@ body {
   top: 1px;
   right: 10px;
   cursor: pointer;
+  background-color: #8888889d;
+  border-radius: 50%;
+  padding: 1px;
+  margin:10px;
+  width:100px;
+  background:#888888c4;
+  height:100px;
+  text-align:center;
+  <strong>border-radius:100px;</strong>
 }
 
 .overlay{
