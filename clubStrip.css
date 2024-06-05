@@ -1,7 +1,7 @@
 @import url("https://fonts.cdnfonts.com/css/new-walt-disney-font");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -10,59 +10,60 @@ body {
   /* overflow: auto; */
 }
 
-body{
-    width: 100%;
-    margin: 0;
-    background-color: black;
+body {
+  width: 100%;
+  margin: 0;
+  background-color: black;
 
-    /*---------NAV------*/
-    nav {
-        position: absolute;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 0rem;
-        color: #fff;
-        margin-top: 10px;
-      }
-  
-      nav :hover {
-        color: red;
-      }
-  
-      nav > a.logo {
-        display: none;
-        color: white;
-        text-decoration: none;
-      }
-  
-      nav > ul {
-        display: flex;
-        list-style: none;
-        padding: 0;
-      }
-  
-      nav > ul > li > a {
-        color: white;
-        text-decoration: none;
-        padding: 1rem;
-      }
-  
-      nav > ul > li > a > i {
-        font-size: 3em;
-      }
-  
-      nav > ul > li > a > span {
-        display: none;
-      }
-    /*----FIN NAV-----*/
+  /*---------NAV------*/
+  nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0rem;
+    color: #fff;
+    margin-top: 10px;
+  }
+
+  nav :hover {
+    color: red;
+  }
+
+  nav>a.logo {
+    display: none;
+    color: white;
+    text-decoration: none;
+  }
+
+  nav>ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  nav>ul>li>a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+  }
+
+  nav>ul>li>a>i {
+    font-size: 3em;
+  }
+
+  nav>ul>li>a>span {
+    display: none;
+  }
+
+  /*----FIN NAV-----*/
 
 
-    .container {
-        background-image: url("images/club/stripclub.jpeg");
+  .container {
+    background-image: url("images/club/stripclub.jpeg");
     background-size: contain;
     /* Pour contenir l'image dans son intégralité
       sans l'étirer ou cacher des parties de l'image*/
@@ -80,7 +81,7 @@ body{
     /*margin vertical à 0,
        permet de centrer l'image avec auto*/
 
-        /* nav {
+    /* nav {
             display: flex;
             justify-content: space-between;
             top: 0;
@@ -121,94 +122,51 @@ body{
         nav :hover {
             color: red;
         } */
-    }
+  }
 
-    img {
-        cursor: pointer;
-    }
+  img {
+    cursor: pointer;
+  }
 
-    #minnie {
-        position: absolute;
-        width: 30%;
-        top: 30%;
-        left: 10%;
-    }
+  #minnie {
+    position: absolute;
+    width: 34%;
+    top: 34%;
+    left: 5%;
+  }
 
-    #pork {
-        position: absolute;
-        width: 10%;
-        top: 30%;
-        left: 30%;
-    }
+  #pork {
+    position: absolute;
+    width: 18%;
+    top: 60%;
+    left: 30%;
+  }
 
-    #lapin {
-        position: absolute;
-        width: 10%;
-        top: 50%;
-        left: 30%;
-    }
+  #lapin {
+    position: absolute;
+    width: 18%;
+    top: 37%;
+    left: 49%;
+  }
 
-    #canard {
-        position: absolute;
-        width: 10%;
-        top: 37%;
-        right: 25%;
-        transform: scaleX(-1);
-    }
+  #canard {
+    position: absolute;
+    width: 10%;
+    top: 37%;
+    right: 25%;
+    transform: scaleX(-1);
+  }
 
-    #pingouin {
-      /*Ne pas toucher, reglé à l'identique sur toutes
+  #pingouin {
+    /*Ne pas toucher, reglé à l'identique sur toutes
       les pages!*/
-      position: absolute;
-      bottom: 0;
-      /* Colle l'image tout en bas de la div parente*/
-      right: 1%;
-      width: 25%;
-      height: auto;
-    }
-}
 
-/*----BOX PORK-----*/
+    position: absolute;
+    bottom: 0;
+    /* Colle l'image tout en bas de la div parente*/
+    right: 1%;
+    width: 20%;
+    height: auto;
+  }
 
-/* pour masquer la boîte de dialogue */
-.hidden {
-  display: none; 
-}
-
-#porkDialogBox {
-  position: fixed;
-  top: 60%;
-  left: 65%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.932);
-  color: black;
-  text-align: center;
-  font-size: 1.8em;
-  font-family: "New Walt Disney Font", sans-serif;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, );
-  z-index: 1000;
-} 
-
-.close {
-  position: absolute;
-  top: 1px;
-  right: 10px;
-  cursor: pointer;
-}
-
-/*----OVERLAY POUR TOUTES LES BOITES-----*/
-.overlay{
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-  z-index: 1;
 }
