@@ -7,16 +7,11 @@
     <title>Où est Mickey? | Home</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon" />
-    
+
 <body>
     <main>
         <div class="columns-container">
-            <div class="column first"></div>
-            <div class="column second"></div>
-            <div class="column third"></div>
-            <div class="column fourth"></div>
-            <div class="column fifth"></div>
-            <div class="column sixth"></div>
+            <!-- Colonnes générées via js -->
         </div>
         <div class="menu-container">
             <a class="connexion" href="#">Se connecter</a>
@@ -24,10 +19,18 @@
                 <h1>Où est Mickey?</h1>
             </div>
             <div class="play-button">
-                <a href="ruelle.html">COMMENCER</a>
+                <a href="./ruelle.html" class="transition-button">COMMENCER</a>
             </div>
         </div>
     </main>
-    <script src="index.js"></script>
+
+    <div class="overlayPage"></div>
+    <div class="modal hidden">
+        <!-- <button class="btn-close">Fermer</button>
+        <img class="fullCharacter hidden"  alt=""> -->
+    </div>
+    <div class="overlayColumn hidden"></div>
+    <script type="module" src="./script/index.js" ></script>
 </body>
+
 </html>
