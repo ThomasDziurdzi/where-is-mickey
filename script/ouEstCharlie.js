@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const zoomSound = document.getElementById('zoomSound')
     
     charlieImage.addEventListener('mouseover', function() {
-        zoomSound.currentTime = 0 //commencer à jouer depuis le début
+        zoomSound.currentTime = 0; //commencer à jouer depuis le début
         zoomSound.play();
 
         //Arrêter le son après une durée spécifique (en millisecondes)
@@ -30,23 +30,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2000);
     });
     
-    //Déclencher la modal Charlie lorsque la musique se termine
-    zoomSound.addEventListener('ended', function() {
+    // Fonction pour afficher la modal Charlie
+    function showModalCharlie() {
         const modalCharlie = document.getElementById('dialogBoxCharlie');
         const closeModalCharlie = document.querySelector('.close-charlie-modal');
         
-        modalCharlie.classList.remove('hidden');
+        modalCharlie.classList.toggle('hidden');
         modalCharlie.style.display = 'block';
-        //Fermer le modal
+
+        // Fermer la modal
         closeModalCharlie.addEventListener('click', function() {
-           modalCharlie.style.display = 'none';
+            modalCharlie.style.display = 'none';
         });
 
-        //Fermer la modal quand on clique en dehors de la modal
+        // Fermer la modal quand on clique en dehors de la modal
         window.addEventListener('click', function(event) {
             if (event.target == modalCharlie) {
                 modalCharlie.style.display = 'none';
             }
-        }); 
-    });
+        });
+    }
 });
