@@ -1,114 +1,93 @@
-Edit in JSFiddle
-JavaScript
-HTML
-SCSS
-Result
-const triggers = document.querySelectorAll('[aria-haspopup="dialog"]');
-const doc = document.querySelector('.js-document');
-const focusableElementsArray = [
-  '[href]',
-  'button:not([disabled])',
-  'input:not([disabled])',
-  'select:not([disabled])',
-  'textarea:not([disabled])',
-  '[tabindex]:not([tabindex="-1"])',
-];
-const keyCodes = {
-  tab: 9,
-  enter: 13,
-  escape: 27,
-};
+import characters from './characters.js';
 
-const open = function (dialog) {
-  const focusableElements = dialog.querySelectorAll(focusableElementsArray);
-  const firstFocusableElement = focusableElements[0];
-  const lastFocusableElement = focusableElements[focusableElements.length - 1];
+document.addEventListener('DOMContentLoaded', (event) => {
+    const columnsContainer = document.querySelector('.columns-container');
 
-  dialog.setAttribute('aria-hidden', false);
-  doc.setAttribute('aria-hidden', true);
+    function attachEventListeners(column) {
+        column.addEventListener('mouseover', function () {
+            let modifiedColumns = [];
+            columnsContainer.querySelectorAll('.columns').forEach(col => {
+                if (col !== column) {
+                    col.style.filter = 'grayscale(100%) opacity(0.6) blur(2px)';
+                    col.classList.add('transition');
+                    col.style.transform = '';
+                    modifiedColumns.push(col);
+                }
+            });
 
-  // return if no focusable element
-  if (!firstFocusableElement) {
-    return;
-  }
+            column.style.transform = 'scale(1.05)';
 
-  window.setTimeout(() => {
-    firstFocusableElement.focus();
-
-    // trapping focus inside the dialog
-    focusableElements.forEach((focusableElement) => {
-      if (focusableElement.addEventListener) {
-        focusableElement.addEventListener('keydown', (event) => {
-          const tab = event.which === keyCodes.tab;
-
-          if (!tab) {
-            return;
-          }
-
-          if (event.shiftKey) {
-            if (event.target === firstFocusableElement) { // shift + tab
-              event.preventDefault();
-
-              lastFocusableElement.focus();
-            }
-          } else if (event.target === lastFocusableElement) { // tab
-            event.preventDefault();
-
-            firstFocusableElement.focus();
-          }
-        });
-      }
-    });
-  }, 100);
-};
-
-const close = function (dialog, trigger) {
-  dialog.setAttribute('aria-hidden', true);
-  doc.setAttribute('aria-hidden', false);
-
-  // restoring focus
-  trigger.focus();
-};
-
-triggers.forEach((trigger) => {
-  const dialog = document.getElementById(trigger.getAttribute('aria-controls'));
-  const dismissTriggers = dialog.querySelectorAll('[data-dismiss]');
-
-  // open dialog
-  trigger.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    open(dialog);
-  });
-
-  trigger.addEventListener('keydown', (event) => {
-    if (event.which === keyCodes.enter) {
-      event.preventDefault();
-
-      open(dialog);
-    }  
-  });
-
-  // close dialog
-  dialog.addEventListener('keydown', (event) => {
-    if (event.which === keyCodes.escape) {
-      close(dialog, trigger);
-    }      
-  });
-
-  dismissTriggers.forEach((dismissTrigger) => {
-    const dismissDialog = document.getElementById(dismissTrigger.dataset.dismiss);
-
-    dismissTrigger.addEventListener('click', (event) => {
-      event.preventDefault();
-
-      close(dismissDialog, trigger);
-    });
-  });
-
-  window.addEventListener('click', (event) => {
-    if (event.target === dialog) {
-      close(dialog, trigger);
+            column.addEventListener('mouseout', function () {
+                modifiedColumns.forEach(col => {
+                    col.style.filter = '';
+                    col.style.transform = '';
+                });
+                column.style.transform = '';
+            }, { once: true });
+        });  
     }
-  }); 
+
+    columnsContainer.addEventListener('mouseleave', function () {
+        columnsContainer.querySelectorAll('.columns').forEach(column => {
+            column.style.filter = '';
+            column.style.transform = '';
+        });
+    });
+
+    characters.forEach((character) => {
+        const columnDiv = document.createElement('div');
+        columnDiv.classList.add('columns');
+        columnDiv.style.backgroundImage = `url(${character.imgCut})`;
+        columnsContainer.appendChild(columnDiv);
+
+        attachEventListeners(columnDiv);
+        attachEventListenersModal(columnDiv, character.img); // Attach modal event listener here
+    });
+
+    function buttonTransition(classButton, overlay) {
+        const transitionLink = document.querySelector(`.${classButton}`);
+        const overlayAnimation = document.querySelector(`.${overlay}`);
+
+        if (transitionLink) {
+            transitionLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetHref = transitionLink.getAttribute('href');
+
+                overlayAnimation.classList.add('active');
+
+                setTimeout(() => {
+                    window.location.href = targetHref;
+                }, 1000);
+            });
+        }
+    }
+
+    buttonTransition('transition-button', 'overlayPage');
+
+    function attachEventListenersModal(column, imgSrc) {
+        const modal = document.querySelector('.modal');
+        const overlayColumn = document.querySelector('.overlayColumn');
+        const closeModalBtn = document.querySelector('.btn-close');
+        // const img = document.querySelector('.fullCharacter');
+
+        const openModal = function () {
+            const characterImg = document.createElement("img");
+            characterImg.src = imgSrc; // Set the image source for the modal
+            modal.classList.remove('hidden');
+            overlayColumn.classList.remove('hidden');
+        };
+
+        const closeModal = function () {
+            modal.classList.add('hidden');
+            overlayColumn.classList.add('hidden');
+        };
+
+        column.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+    }
 });
+// characters.forEach((character) => {
+//     const columnDiv = document.createElement('div');
+//     columnDiv.classList.add('columns');
+//     columnDiv.style.backgroundImage = `url(${character.imgCut})`;
+//     columnsContainer.appendChild(columnDiv);

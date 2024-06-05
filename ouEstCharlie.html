@@ -9,7 +9,7 @@
     <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon" />
 </head>
 <body>
-    <!-- container pour les images de background - l'image de fond est dans le css dans le container -->
+    <!-- div container pour les images de background - l'image de fond est dans le css dans le container -->
     <div class="background-container">
         <nav>
             <a href="#" class="logo">Logo</a>
@@ -26,14 +26,25 @@
               </li>
             </ul>
           </nav>
-            <img id="herculeFoireux" src="./images/hercule.png" alt="personnage Hercule foireux">
-            <img id="charlie" src="./images/charlie/charlie.png">
-    </div>
-    <!-- ajout boîte dialogue Hercule -->
-    <!-- <button id="herculeButton">Par ici !</button>
-    <div id="dialogBoxHercule" class="hidden">
-        <p>Bravo! Tu as presque fini ton enquête.<br> Il te reste à trouver l'assassin dans cette foule</p>
-    </div>
-    <script src="OuEstCharlie.js"></script> -->
+          <img id="charlie" src="./images/charlie/charlie.png">
+          <img id="herculeFoireux" src="./images/hercule.png" alt="personnage Hercule foireux">
+        </div>
+        
+        <!--modal Hercule -->
+        <div id="dialogBoxHercule" class="hidden">
+          <span class="close">&times;</span>
+          <p>Bravo! Tu as presque fini ton enquête.<br> 
+            Il te reste à trouver l'assassin dans cette foule</p>
+          </div>
+          <div class="overlay hidden"></div>
+          <!--modal charlie-->
+          <div id="dialogBoxCharlie" class="modalCharlie hidden">
+            <div class="modalCharlie-content">
+              <span class="close-charlie-modal">&times;</span>
+              <p>Bravo! Tu as trouvé l'assasin Xavier Dupont de Mayonnaise</p>
+            </div>
+          </div>
+          <audio id="zoomSound" src="./audio/crowd-cheer-ii-6263.mp3"></audio>
+          <script src="./script/ouEstCharlie.js"></script>
 </body>
 </html>
