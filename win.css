@@ -40,6 +40,18 @@ body {
 body {
   margin: 0;
   background-color: black;
+  position: relative;
+
+  canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ajout pour permettre les clics à travers le canvas */
+    z-index: 4;
+  }
 
   .container {
     /* background-image: url(/images/win/cartoon_landscape.png);
@@ -77,6 +89,7 @@ body {
     margin: 0 auto;
     /*margin vertical à 0,
        permet de centrer l'image avec auto*/
+    z-index: 2;
 
     nav {
       position: absolute;
@@ -128,8 +141,8 @@ body {
     .bulle {
       position: absolute;
       top: 450px;
-      right: 950px;
-      width: 390px;
+      right: 850px;
+      width: 500px;
       padding: 80px;
       background-color: white;
       border: 2px solid black;
@@ -137,6 +150,10 @@ body {
       box-shadow: 5px 5px 0px black;
       font-family: "New Walt Disney Font", sans-serif;
       font-size: 30px;
+      z-index: 5;
+    }
+    .hidden {
+      display: none;
     }
 
     .bulle::after {
@@ -157,9 +174,10 @@ body {
   .bulle p {
     position: absolute;
     width: 100%;
-    bottom: -14%;
+    bottom: -12%;
     right: 50%;
     text-align: center;
+    color: crimson;
   }
   .close {
     position: absolute;
@@ -167,7 +185,7 @@ body {
     right: 10px;
     font-size: 40px;
     cursor: pointer;
-    z-index: 101;
+    z-index: 5;
   }
 
   .labels {
@@ -202,8 +220,7 @@ p {
   bottom: 14%;
   left: 2%;
   font-family: "New Walt Disney Font", sans-serif;
-  color: crimson;
-  z-index: 100;
+  color: black;
 }
 
 .Champion {
