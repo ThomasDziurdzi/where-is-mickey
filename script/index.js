@@ -1,48 +1,81 @@
 import characters from './characters.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    const columnsContainer = document.querySelector('.columns-container');
 
-    function attachEventListeners(column) {
-        column.addEventListener('mouseover', function () {
-            let modifiedColumns = [];
-            columnsContainer.querySelectorAll('.columns').forEach(col => {
-                if (col !== column) {
-                    col.style.filter = 'grayscale(100%) opacity(0.6) blur(2px)';
-                    col.classList.add('transition');
-                    col.style.transform = '';
-                    modifiedColumns.push(col);
-                }
-            });
+     // creating columns of characters
+     const columnContainer = document.querySelector('.columns-container');
+     
+     function createColumn(image) {
+         const columnCharacter = document.createElement('div');
+         columnCharacter.classList.add('column')
+         columnCharacter.style.backgroundImage = `url(${image})`
+         columnContainer.appendChild(columnCharacter);
+     }
 
-            column.style.transform = 'scale(1.05)';
+     for(let i = 0; i < characters.length; i++) {
+         createColumn(characters[i].imgCut)
+     }
 
-            column.addEventListener('mouseout', function () {
-                modifiedColumns.forEach(col => {
-                    col.style.filter = '';
-                    col.style.transform = '';
-                });
-                column.style.transform = '';
-            }, { once: true });
-        });  
-    }
+     //filters when mouseover and mouseout on columns
+     //Opening Modal
+     const column = document.querySelectorAll('.column');
+     const modal = document.querySelector('.modal'); 
+     const overlayPage = document.querySelector('.overlayPage');
 
-    columnsContainer.addEventListener('mouseleave', function () {
-        columnsContainer.querySelectorAll('.columns').forEach(column => {
-            column.style.filter = '';
-            column.style.transform = '';
-        });
-    });
+     column.forEach((col) => {
+        //FILTERS
+        col.addEventListener('mouseover' , function() {
+            col.style.filter = 'grayscale(100%) opacity(0.6) blur(2px)';
+        })
+        //MODAL
+        col.addEventListener('click', function() {
+            modal.classList.remove('modal-hidden')
+            overlayPage.
+            
+        })
+     })
 
-    characters.forEach((character) => {
-        const columnDiv = document.createElement('div');
-        columnDiv.classList.add('columns');
-        columnDiv.style.backgroundImage = `url(${character.imgCut})`;
-        columnsContainer.appendChild(columnDiv);
 
-        attachEventListeners(columnDiv);
-        attachEventListenersModal(columnDiv, character.img); // Attach modal event listener here
-    });
+    // function attachEventListeners(column) {
+    //     column.addEventListener('mouseover', function () {
+    //         let modifiedColumns = [];
+    //         columnsContainer.querySelectorAll('.columns').forEach(col => {
+    //             if (col !== column) {
+    //                 col.style.filter = 'grayscale(100%) opacity(0.6) blur(2px)';
+    //                 col.classList.add('transition');
+    //                 col.style.transform = '';
+    //                 modifiedColumns.push(col);
+    //             }
+    //         });
+
+    //         column.style.transform = 'scale(1.05)';
+
+    //         column.addEventListener('mouseout', function () {
+    //             modifiedColumns.forEach(col => {
+    //                 col.style.filter = '';
+    //                 col.style.transform = '';
+    //             });
+    //             column.style.transform = '';
+    //         }, { once: true });
+    //     });  
+    // }
+
+    // columnsContainer.addEventListener('mouseleave', function () {
+    //     columnsContainer.querySelectorAll('.columns').forEach(column => {
+    //         column.style.filter = '';
+    //         column.style.transform = '';
+    //     });
+    // });
+
+    // characters.forEach((character) => {
+    //     const columnDiv = document.createElement('div');
+    //     columnDiv.classList.add('columns');
+    //     columnDiv.style.backgroundImage = `url(${character.imgCut})`;
+    //     columnsContainer.appendChild(columnDiv);
+
+    //     attachEventListeners(columnDiv);
+    //     attachEventListenersModal(columnDiv, character.img); // Attach modal event listener here
+    // });
 
     function buttonTransition(classButton, overlay) {
         const transitionLink = document.querySelector(`.${classButton}`);
@@ -64,30 +97,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     buttonTransition('transition-button', 'overlayPage');
 
-    function attachEventListenersModal(column, imgSrc) {
-        const modal = document.querySelector('.modal');
-        const overlayColumn = document.querySelector('.overlayColumn');
-        const closeModalBtn = document.querySelector('.btn-close');
-        // const img = document.querySelector('.fullCharacter');
+    // function attachEventListenersModal(column, imgSrc) {
+    //     const modal = document.querySelector('.modal');
+    //     const overlayColumn = document.querySelector('.overlayColumn');
+    //     const closeModalBtn = document.querySelector('.btn-close');
+    //     // const img = document.querySelector('.fullCharacter');
 
-        const openModal = function () {
-            const characterImg = document.createElement("img");
-            characterImg.src = imgSrc; // Set the image source for the modal
-            modal.classList.remove('hidden');
-            overlayColumn.classList.remove('hidden');
-        };
+    //     const openModal = function () {
+    //         const characterImg = document.createElement("img");
+    //         characterImg.src = imgSrc; // Set the image source for the modal
+    //         modal.classList.remove('hidden');
+    //         overlayColumn.classList.remove('hidden');
+    //     };
 
-        const closeModal = function () {
-            modal.classList.add('hidden');
-            overlayColumn.classList.add('hidden');
-        };
+    //     const closeModal = function () {
+    //         modal.classList.add('hidden');
+    //         overlayColumn.classList.add('hidden');
+    //     };
 
-        column.addEventListener('click', openModal);
-        closeModalBtn.addEventListener('click', closeModal);
-    }
-});
-// characters.forEach((character) => {
-//     const columnDiv = document.createElement('div');
-//     columnDiv.classList.add('columns');
-//     columnDiv.style.backgroundImage = `url(${character.imgCut})`;
-//     columnsContainer.appendChild(columnDiv);
+    //     column.addEventListener('click', openModal);
+    //     closeModalBtn.addEventListener('click', closeModal);
+    // }
+       
+
+       
+
+    });

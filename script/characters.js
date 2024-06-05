@@ -17,7 +17,7 @@ const characters = [
         id : 3,
         name : 'Bugs Bunny',
         content : 'dqsdqsdqsdqdqsdqsd',
-        img: './images/menu/bugs',
+        img: './images/menu/bugs.jpeg',
         imgCut : 'images/menu/bugscolumns.png'
     },
     {

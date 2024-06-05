@@ -46,7 +46,7 @@ body {
                 grid-template-columns: repeat(6, 1fr);
                 overflow: hidden;
 
-                .columns {
+                .column {
                     transform-origin: center;
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -189,27 +189,32 @@ body {
   }
   
   .modal {
+    position: fixed;
     height: 80vh;
     width: 70vw;
-    display: flex;
-    
-    background-size: contain;
-    padding: 1.3rem;
-    position: absolute;
     top: 50%;
     left: 50%;
-    /* background-color: white; */
-    /* border: 1px solid #ddd; */
-    transform: translate(-50%, -50%);
-    
+    background-color: aquamarine;
+    transform-origin: 50% 50%;
+    animation: fade-in-animation 0.4s linear 0s 1 normal both running;
     z-index: 101;
   }
 
-  .modal img {
-    
-    background-size: contain;
-    flex-basis: 70%;
+  @keyframes fade-in-animation {
+    0% {
+      filter: blur(3px);
+      opacity: 0;
+    }
+  
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+    }
   }
+  .modal-hidden {
+    display: none;
+  }
+
   .overlayColumn {
     position: fixed;
     top: 0;
