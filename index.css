@@ -44,59 +44,16 @@ body {
             @media screen and (min-width: 900px) {
                 display: grid;
                 grid-template-columns: repeat(6, 1fr);
+                overflow: hidden;
 
-
-                /* .column:hover {
-                    filter: grayscale(100%) opacity(20%);
-                } */
-
-                .first {
-                    background-image: url(images/menu/herculecutcolumn.png);
+                .columns {
+                    transform-origin: center;
                     background-repeat: no-repeat;
                     background-size: cover;
                     height: 100%;
                     width: 100%;
                 }
 
-                .second {
-                    background-image: url(images/menu/minniecutcolumns.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    height: 100%;
-                    width: 100%;
-                }
-
-                .third {
-                    background-image: url(images/menu/bugscutcolumns.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    height: 100%;
-                    width: 100%;
-                }
-
-                .fourth {
-                    background-image: url(images/menu/daffycutcolumns.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    height: 100%;
-                    width: 100%;
-                }
-
-                .fifth {
-                    background-image: url(images/menu/franklinsdfcutcolumns.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    height: 100%;
-                    width: 100%;
-                }
-
-                .sixth {
-                    background-image: url(images/menu/porkcutcolumns.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    height: 100%;
-                    width: 100%;
-                    /* filter: grayscale(100%) opacity(20%); */
                 }
 
                 .transition {
@@ -167,6 +124,8 @@ body {
                     @media screen and (min-width: 900px) {
                         font-size: 10rem;
                         max-height: 100%;
+
+                       
                     }
                 }
             }
@@ -208,7 +167,7 @@ body {
             }
         }
     }
-}
+
 
 /* Styles pour l'overlay */
 .overlayPage {
@@ -230,18 +189,27 @@ body {
   }
   
   .modal {
-    width: 450px;
+    height: 80vh;
+    width: 70vw;
+    display: flex;
+    
+    background-size: contain;
     padding: 1.3rem;
-    min-height: 250px;
     position: absolute;
-    top: 20%;
-    left: 20%;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    z-index: 2;
+    top: 50%;
+    left: 50%;
+    /* background-color: white; */
+    /* border: 1px solid #ddd; */
+    transform: translate(-50%, -50%);
+    
+    z-index: 101;
   }
 
+  .modal img {
+    
+    background-size: contain;
+    flex-basis: 70%;
+  }
   .overlayColumn {
     position: fixed;
     top: 0;
@@ -252,7 +220,7 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
-    z-index: 1;
+    z-index: 100;
   }
 
   .hidden {

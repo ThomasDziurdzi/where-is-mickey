@@ -1,37 +1,49 @@
+import characters from './characters.js';
+
 document.addEventListener('DOMContentLoaded', (event) => {
-    const columns = document.querySelectorAll('.columns');
     const columnsContainer = document.querySelector('.columns-container');
-    const begin = document.getElementById('begin');
-    console.log(begin)
-   
 
-    columns.forEach(column => {
-        //Itère sur chaque élément de la nodelist et ajoute un eventlistener
+    function attachEventListeners(column) {
         column.addEventListener('mouseover', function () {
-            columns.forEach(col => {
-                //vérifie la condition à chaque survol d'une colonne
+            let modifiedColumns = [];
+            columnsContainer.querySelectorAll('.columns').forEach(col => {
                 if (col !== column) {
-                    col.style.filter = 'grayscale(100%) opacity(20%) blur(2px)';
+                    col.style.filter = 'grayscale(100%) opacity(0.6) blur(2px)';
                     col.classList.add('transition');
+                    col.style.transform = '';
+                    modifiedColumns.push(col);
                 }
-            })
-        })
+            });
 
-        column.addEventListener('mouseout', function () {
-            columns.forEach(col => {
-                col.style.filter = '';
-            })
-        })
+            column.style.transform = 'scale(1.05)';
+
+            column.addEventListener('mouseout', function () {
+                modifiedColumns.forEach(col => {
+                    col.style.filter = '';
+                    col.style.transform = '';
+                });
+                column.style.transform = '';
+            }, { once: true });
+        });  
+    }
+
+    columnsContainer.addEventListener('mouseleave', function () {
+        columnsContainer.querySelectorAll('.columns').forEach(column => {
+            column.style.filter = '';
+            column.style.transform = '';
+        });
     });
 
-    //On s'assure qu'une fois quitté le conteneur, plus aucun filtre n'est actif
-    columnsContainer.addEventListener('mouseleave', function () {
-        columns.forEach(column => {
-            column.style.filter = '';
-        })
-    })
+    characters.forEach((character) => {
+        const columnDiv = document.createElement('div');
+        columnDiv.classList.add('columns');
+        columnDiv.style.backgroundImage = `url(${character.imgCut})`;
+        columnsContainer.appendChild(columnDiv);
 
-//Crée un fondu noir pour passer d'une page à l'autre
+        attachEventListeners(columnDiv);
+        attachEventListenersModal(columnDiv, character.img); // Attach modal event listener here
+    });
+
     function buttonTransition(classButton, overlay) {
         const transitionLink = document.querySelector(`.${classButton}`);
         const overlayAnimation = document.querySelector(`.${overlay}`);
@@ -45,35 +57,37 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                 setTimeout(() => {
                     window.location.href = targetHref;
-                }, 1000); // Correspond à la durée de l'animation CSS
+                }, 1000);
             });
         }
     }
 
     buttonTransition('transition-button', 'overlayPage');
 
+    function attachEventListenersModal(column, imgSrc) {
+        const modal = document.querySelector('.modal');
+        const overlayColumn = document.querySelector('.overlayColumn');
+        const closeModalBtn = document.querySelector('.btn-close');
+        // const img = document.querySelector('.fullCharacter');
 
-//-------------------------MODALE--------------------------
-const modal = document.querySelector('.modal');
-const overlayColumn = document.querySelector('.overlayColumn');
-const firstImg = document.querySelector('.sixth');
-const closeModalBtn = document.querySelector('.btn-close');
+        const openModal = function () {
+            const characterImg = document.createElement("img");
+            characterImg.src = imgSrc; // Set the image source for the modal
+            modal.classList.remove('hidden');
+            overlayColumn.classList.remove('hidden');
+        };
 
-const openModal = function() {
-    modal.classList.remove('hidden');
-    overlayColumn.classList.remove('hidden');
-}
+        const closeModal = function () {
+            modal.classList.add('hidden');
+            overlayColumn.classList.add('hidden');
+        };
 
-const closeModal = function() {
-    modal.classList.add('hidden');
-    overlayColumn.classList.add('hidden');
-}
-
-
-
-firstImg.addEventListener('click', openModal)
-closeModalBtn.addEventListener('click',closeModal)
-
-
+        column.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+    }
 });
-
+// characters.forEach((character) => {
+//     const columnDiv = document.createElement('div');
+//     columnDiv.classList.add('columns');
+//     columnDiv.style.backgroundImage = `url(${character.imgCut})`;
+//     columnsContainer.appendChild(columnDiv);
