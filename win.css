@@ -128,8 +128,8 @@ body {
     .bulle {
       position: absolute;
       top: 450px;
-      right: 850px;
-      width: 500px;
+      right: 950px;
+      width: 390px;
       padding: 80px;
       background-color: white;
       border: 2px solid black;
@@ -157,7 +157,7 @@ body {
   .bulle p {
     position: absolute;
     width: 100%;
-    bottom: 10%;
+    bottom: -14%;
     right: 50%;
     text-align: center;
   }
@@ -167,6 +167,7 @@ body {
     right: 10px;
     font-size: 40px;
     cursor: pointer;
+    z-index: 101;
   }
 
   .labels {
@@ -201,7 +202,8 @@ p {
   bottom: 14%;
   left: 2%;
   font-family: "New Walt Disney Font", sans-serif;
-  color: black;
+  color: crimson;
+  z-index: 100;
 }
 
 .Champion {
