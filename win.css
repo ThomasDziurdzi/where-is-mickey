@@ -45,12 +45,12 @@ body {
   canvas {
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 80px;
+    left: 5px;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Ajout pour permettre les clics à travers le canvas */
-    z-index: 4;
+    pointer-events: visibleStroke; /* Ajout pour permettre les clics à travers le canvas */
+    z-index: -1;
   }
 
   .container {
@@ -89,7 +89,7 @@ body {
     margin: 0 auto;
     /*margin vertical à 0,
        permet de centrer l'image avec auto*/
-    z-index: 2;
+    z-index: -2;
 
     nav {
       position: absolute;
