@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const penguinMessage2 = document.getElementById('manchotMessage2');
     const penguinMessage3 = document.getElementById('manchotmessage3');
 
+
     //Voiture
     const carMessage = document.getElementById('carMessage');
     const closeBtnCar = document.getElementById('closeCar');
@@ -15,6 +16,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const garbageMessage = document.getElementById('garbageMessage');
     const garbageImage = document.getElementById('garbage');
     const closeBtnGarbage = document.getElementById('closeGarbage');
+    const garbageMessage2 = document.getElementById('garbageMessage2');
+    const nextButtonGarbage = document.getElementById('nextGarbage');
+
+    //Sandwich
+    const sandwichMessage = document.getElementById('sandwichMessage');
+    const nextBtnSandwich = document.getElementById('nextSandwich');
+    const sandwichMessage2 = document.getElementById('sandwichMessage2');
+    const nextBtnSandwich2 = document.getElementById('nextSandwich2');
+
+    //Revolver
+    const revolverMessage = document.getElementById('revolverMessage');
+    const nextBtnRevolver = document.getElementById('nextRevolver');
+    const revolverMessage2 = document.getElementById('revolverMessage2');
+    const closeBtnRevolver = document.getElementById('closeRevolver')
+
+    //Arme alien
+    const alienMessage = document.getElementById('alienMessage');
+    const nextBtnAlien = document.getElementById('nextAlien');
+    const alienMessage2 = document.getElementById('alienMessage2');
+    const closeBtnAlien = document.getElementById('closeAlien');
+
+    //Sac à main
+    const sacMessage = document.getElementById('sacMessage');
+    const nextSac = document.getElementById('nextSac');
+    const sacMessage2 = document.getElementById('sacMessage2');
+
 
     // Mickey
     const mickeyImage = document.getElementById('mickey');
@@ -43,15 +70,86 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextFranklinToPenguin = document.getElementById('nextFranklin5');
     const unlockGarbage = document.getElementById('nextFranklin6');
 
-    //Close garbage's message:
-    closeBtnGarbage.addEventListener('click', () => {
-        garbageMessage.style.display = 'none';
+    //Crime weapon discoverd :
+    nextBtnSandwich2.addEventListener('click', () => {
+        sandwichMessage2.style.display = 'none';
+
+
     })
 
-    //Garbage's Interaction :
-    garbageImage.addEventListener('click', () => {
-        garbageMessage.style.display = 'block';
+    //Sandwich selection :
+    nextBtnSandwich.addEventListener('click', () => {
+        sandwichMessage2.style.display = "block";
+        sacMessage.style.display = "none";
+        alienMessage.style.display = 'none';
+        revolverMessage.style.display = 'none';
+        sandwichMessage.style.display = 'none';
+
     })
+
+    //Sac selection :
+    nextSac.addEventListener('click', () => {
+        sacMessage2.style.display = 'block';
+        sacMessage.style.display = "none";
+        alienMessage.style.display = 'none';
+        revolverMessage.style.display = 'none';
+        sandwichMessage.style.display = 'none';
+
+    })
+
+    //Alien weapon close window :
+    closeBtnAlien.addEventListener('click', () => {
+        alienMessage2.style.display = 'none';
+    })
+
+    //Alien weapon selection :
+    nextBtnAlien.addEventListener('click', () => {
+        alienMessage2.style.display = 'block';
+        sacMessage.style.display = "none";
+        alienMessage.style.display = 'none';
+        revolverMessage.style.display = 'none';
+        sandwichMessage.style.display = 'none';
+
+    })
+
+    //Revolver close window:
+    closeBtnRevolver.addEventListener('click', () => {
+        revolverMessage2.style.display = 'none';
+    })
+
+    //Revolver selection :
+    nextBtnRevolver.addEventListener('click', () => {
+        revolverMessage2.style.display = 'block';
+        sacMessage.style.display = "none";
+        alienMessage.style.display = 'none';
+        revolverMessage.style.display = 'none';
+        sandwichMessage.style.display = 'none';
+
+    })
+
+    //Choice of player between 4 items :
+    nextButtonGarbage.addEventListener('click', () => {
+        sacMessage.style.display = "block";
+        alienMessage.style.display = 'block';
+        revolverMessage.style.display = 'block';
+        sandwichMessage.style.display = 'block';
+        garbageMessage2.style.display = 'none';
+    })
+
+    //Unlocked garbage interaction :
+    garbageImage.addEventListener('click', () => {
+        garbageMessage2.style.display = "block";
+    })
+
+    // //Close garbage's message:
+    // closeBtnGarbage.addEventListener('click', () => {
+    //     garbageMessage.style.display = 'none';
+    // })
+
+    // //Garbage's Interaction :
+    // garbageImage.addEventListener('click', () => {
+    //     garbageMessage.style.display = 'block';
+    // })
 
     //Close car's message :
     closeBtnCar.addEventListener('click', () => {

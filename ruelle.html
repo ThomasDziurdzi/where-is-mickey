@@ -27,7 +27,9 @@
                 </li>
             </ul>
         </nav>
+        <div class="image-container"></div>
         <img id="mickey" src="./images/ruelle/mickey.png" alt="Mickey Mouse">
+        <div class="dialog" id="dialog-mickey">Hello, I'm Mickey!</div>
         <div class="container">
             <div id="mickeymessage" class="popupM">
                 <span class="next" id="nextMickey">>>></span>
@@ -43,29 +45,101 @@
                     “Haha! Aaaarrrgghh .. ai.....dez.... moiiii.....”</p>
             </div>
         </div>
+        <div class="image-container"></div>
         <img id="penguin" src="/images/hercule.png" alt="Penguin">
+        <div class="dialog" id="dialog-penguin">I'm the Penguin.</div>
+    </div>
+    <div class="container">
+        <div id="manchotMessage" class="popupP">
+            <span class="next" id="nextPenguin">>>></span>
+            <p>Le manchot vous regarde comme si il vous connaissait depuis trés longtemps et vous dit : “ Bien !
+                Vous allez devoir m’assister dans cette enquête, Mickey vient d’être sauvagement assassiner !”</p>
+        </div>
+    </div>
+    <div class="container">
+        <div id="manchotMessage2" class="popupP">
+            <span class="next" id="nextPenguin2">>>></span>
+            <p>“Pauvre bougre, nous ne pouvons plus rien pour lui. Vite il faut agir ! Trouvons des indices,
+                peux-être que le tueur à laissé quelque chose qui pourrait nous mettre sur sa piste ! “</p>
+        </div>
+    </div>
+    <div class="image-container"></div>
+    <img id="garbage" src="/images/ruelle/garbage.png" alt="garbage">
+    <div class="dialog" id="dialog-garbage">Trash talk.</div>
+    </div>
+    <div class="container">
+        <div id="garbageMessage" class="popupG">
+            <span class="close" id="closeGarbage">X</span>
+            <p>Vous êtes revolté , ils ne font pas le tri selectif.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div id="garbageMessage2" class="popupG">
+            <span class="next" id="nextGarbage">>>></span>
+            <p>La poubelle est jonché de détritus , plusieurs éléments vous intringue.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div id="sandwichMessage" class="popupS">
+            <span class="next" id="nextSandwich">>>></span>
+            <p>Un délicieux sandwich à la mayonnaise et .. avec de la sauce tomate ?</p>
+        </div>
+    </div>
+    <div class="container">
+        <div id="sandwichMessage2" class="popupG">
+            <span class="next" id="nextSandwich2">>>></span>
+            <p>Limpide comme de l’eau de source, il est évident que c’est l’arme du tueur, il faut vite prévenir
+                inspecteur Foireux !</p>
+        </div>
+    </div>
+    <div class="container">
+        <div id="manchotMessage4" class="popupP">
+            <span class="next" id="versClub"><a href="clubStrip.html">Vers club</a></span>
+            <p>Vous vous avancez vers le manchot , et lui presentez l’arme du crime.
+                “Un sandwich ? A la mayonnaise ?! Oh mon dieu... Je ne peux pas y croire... Il serait.. de ret.... Non
+                il est trop tôt pour incriminer qui que ce soit , vous avez fait un trés beau travail, venez avec moi,
+                nous allons interroger la fraichement veuve Minnie .</p>
+        </div>
         <div class="container">
-            <div id="manchotMessage" class="popupP">
-                <span class="next" id="nextPenguin">>>></span>
-                <p>Le manchot vous regarde comme si il vous connaissait depuis trés longtemps et vous dit : “ Bien !
-                    Vous allez devoir m’assister dans cette enquête, Mickey vient d’être sauvagement assassiner !”</p>
+            <div id="revolverMessage" class="popupR">
+                <span class="next" id="nextRevolver">>>></span>
+                <p>Un revolver , petit mais mortel</p>
             </div>
         </div>
         <div class="container">
-            <div id="manchotMessage2" class="popupP">
-                <span class="next" id="nextPenguin2">>>></span>
-                <p>“Pauvre bougre, nous ne pouvons plus rien pour lui. Vite il faut agir ! Trouvons des indices,
-                    peux-être que le tueur à laissé quelque chose qui pourrait nous mettre sur sa piste ! “</p>
+            <div id="revolverMessage2" class="popupG">
+                <span class="close" id="closeRevolver">X</span>
+                <p>L’arme est froide, rouillé, peu de chance qu’elle soit l’arme du crime.</p>
             </div>
         </div>
-        <img id="garbage" src="/images/ruelle/garbage.png" alt="garbage">
         <div class="container">
-            <div id="garbageMessage" class="popupG">
-                <span class="close" id="closeGarbage">X</span>
-                <p>Vous êtes revolté , ils ne font pas le tri selectif.</p>
+            <div id="alienMessage" class="popupA">
+                <span class="next" id="nextAlien">>>></span>
+                <p>Une arme alien... peux-être que Franklin avait raison !</p>
             </div>
         </div>
-        <img id="car" src="/images/ruelle/car.png" alt="Car">
+        <div class="container">
+            <div id="alienMessage2" class="popupG">
+                <span class="close" id="closeAlien">X</span>
+                <p>Impossible.. Franklin avait raison!!</p>
+            </div>
+        </div>
+        <div class="container">
+            <div id="sacMessage" class="popupSa">
+                <span class="next" id="nextSac">>>></span>
+                <p>Un sac à main.. il a l’air lourd.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div id="sacMessage2" class="popupG">
+                <span class="next" id="gameover"><a href="gameOver.html">>>></a></span>
+                <p>Vous n’auriez jamais dû l’ouvrir, le sac aspire votre âme.</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <img id="car" src="/images/ruelle/car.png" alt="Car">
+            <div class="dialog" id="dialog-car">Beep Beep!</div>
+        </div>
         <div class="container">
             <div id="carMessage" class="popupC">
                 <span class="close" id="closeCar">X</span>
@@ -73,7 +147,10 @@
                     dame.</p>
             </div>
         </div>
-        <img id="franklinsdf" src="/images/ruelle/franklinsdf.png" alt="franklinsdf">
+        <div class="image-container">
+            <img id="franklinsdf" src="/images/ruelle/franklinsdf.png" alt="franklinsdf">
+            <div class="dialog" id="dialog-franklinsdf">Hello, I'm Franklin.</div>
+        </div>
         <div class="container">
             <div id="franklinMessage" class="popupF">
                 <span class="next" id="nextFranklin">>>></span>
@@ -124,11 +201,26 @@
                     à perdre !”</p>
             </div>
         </div>
-        <img id="gun" src="/images/ruelle/gun.png" alt="gun">
-        <img id="knife" src="/images/ruelle/knife.png" alt="knife">
-        <img id="launch" src="/images/ruelle/launch.png" alt="launch missile">
-        <img id="sandwich" src="/images/ruelle/sandwich.png" alt="sandwich">
-        <img id="bag" src="/images/ruelle/bag.png" alt="bag">
+        <div class="image-container">
+            <img id="gun" src="/images/ruelle/gun.png" alt="gun">
+            <div class="dialog" id="dialog-gun">Bang Bang!</div>
+        </div>
+        <div class="image-container">
+            <img id="knife" src="/images/ruelle/knife.png" alt="knife">
+            <div class="dialog" id="dialog-knife">Slash!</div>
+        </div>
+        <div class="image-container">
+            <img id="launch" src="/images/ruelle/launch.png" alt="launch missile">
+            <div class="dialog" id="dialog-launch">Launch!</div>
+        </div>
+        <div class="image-container">
+            <img id="sandwich" src="/images/ruelle/sandwich.png" alt="sandwich">
+            <div class="dialog" id="dialog-sandwich">Yummy!</div>
+        </div>
+        <div class="image-container">
+            <img id="bag" src="/images/ruelle/bag.png" alt="bag">
+            <div class="dialog" id="dialog-bag">Bag it!</div>
+        </div>
     </div>
     <script src="Ruelle.js"></script>
 </body>
