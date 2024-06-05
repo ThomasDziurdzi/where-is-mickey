@@ -57,6 +57,9 @@ body {
     margin: 0 auto;
     /*margin vertical à 0,
      permet de centrer l'image avec auto*/
+
+    overflow: hidden;
+
 }
 
 /* Ajoutez ou assurez-vous que les transitions sont incluses pour une transition douce */
@@ -99,6 +102,15 @@ nav>ul>li>a {
     text-decoration: none;
     padding: 1rem;
 }
+
+
+
+
+
+
+
+
+
 
 nav>ul>li>a>i {
     font-size: 3em;
@@ -299,6 +311,7 @@ nav>ul>li>a>span {
     animation: move-dialog 3s infinite;
 }
 
+
 @keyframes move-dialog {
     0% {
         transform: translateX(-50%);
@@ -306,6 +319,7 @@ nav>ul>li>a>span {
 
     50% {
         transform: translateX(-40%);
+
     }
 
     100% {
@@ -313,18 +327,33 @@ nav>ul>li>a>span {
     }
 }
 
-#gun:hover+.dialog,
-#knife:hover+.dialog,
-#launch:hover+.dialog,
-#bag:hover+.dialog,
-#sandwich:hover+.dialog,
-#mickey:hover+.dialog,
-#car:hover+.dialog,
-#garbage:hover+.dialog,
-#franklinsdf:hover+.dialog,
-#penguin:hover+.dialog {
-    display: block;
+#dialog-franklinsdf {
+    top: 75%;
+    left: 21%;
+    transform: translate(-50%, -50%);
+    animation: move-dialog 3s infinite;
 }
+
+#dialog-car {
+
+    top: 60%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+    animation: move-dialog 3s infinite;
+}
+
+#dialog-mickey {
+
+    top: 80%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    animation: move-dialog 3s infinite;
+
+   
+
+
+
+
 
 #dialog-garbage {
 
@@ -385,29 +414,33 @@ nav>ul>li>a>span {
 
 #dialog-garbage {
 
-    top: 89%;
-    left: 61%;
+
+    top: 73%;
+    left: 65%;
+
+  
     transform: translate(-50%, -50%);
     animation: move-dialog 3s infinite;
 }
 
-#dialog-franklinsdf {
-    top: 75%;
-    left: 21%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-}
 
-#dialog-car {
 
-    top: 60%;
-    left: 33%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-}
 
-img {
-    cursor: pointer;
+
+
+#gun:hover+.dialog,
+#knife:hover+.dialog,
+#launch:hover+.dialog,
+#bag:hover+.dialog,
+#sandwich:hover+.dialog,
+#mickey:hover+.dialog,
+#car:hover+.dialog,
+#garbage:hover+.dialog,
+#franklinsdf:hover+.dialog,
+#penguin:hover+.dialog {
+    display: block;
+
+
 }
 
 #gun {
@@ -416,6 +449,7 @@ img {
     width: 3%;
     top: 83%;
     left: 60%;
+
 }
 
 #knife {
@@ -424,6 +458,7 @@ img {
     width: 4%;
     top: 81%;
     left: 61%;
+
 }
 
 #launch {
@@ -432,6 +467,7 @@ img {
     width: 4%;
     top: 62%;
     left: 57%;
+
 }
 
 #bag {
@@ -467,6 +503,7 @@ img {
     width: 10%;
     top: 55%;
     left: 20%;
+
 }
 
 #garbage {
@@ -480,9 +517,12 @@ img {
 
 #franklinsdf {
     position: absolute;
-    width: 20%;
+
     bottom: 0;
+    width: 20%;
     left: 1%;
+
+
 }
 
 #penguin {
@@ -501,6 +541,7 @@ img {
     height: 100%;
     position: absolute;
     transition: transform 2s ease-in-out;
+
 }
 
 .popupS {
@@ -565,4 +606,5 @@ img {
     text-align: center;
     cursor: pointer;
     background-color: white;
+
 }
