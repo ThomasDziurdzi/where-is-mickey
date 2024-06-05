@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextPenguinBtn = document.getElementById('nextPenguin');
     const penguinMessage2 = document.getElementById('manchotMessage2');
     const penguinMessage3 = document.getElementById('manchotmessage3');
-
+    const penguinMessage4 = document.getElementById('manchotMessage4');
 
     //Voiture
     const carMessage = document.getElementById('carMessage');
@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Crime weapon discoverd :
     nextBtnSandwich2.addEventListener('click', () => {
         sandwichMessage2.style.display = 'none';
+        penguinMessage4.style.display = 'block';
 
 
     })

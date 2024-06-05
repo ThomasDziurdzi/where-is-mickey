@@ -412,6 +412,7 @@ img {
 
 #gun {
     position: absolute;
+    bottom: 0;
     width: 3%;
     top: 83%;
     left: 60%;
@@ -419,6 +420,7 @@ img {
 
 #knife {
     position: absolute;
+    bottom: 0;
     width: 4%;
     top: 81%;
     left: 61%;
@@ -426,6 +428,7 @@ img {
 
 #launch {
     position: absolute;
+    bottom: 0;
     width: 4%;
     top: 62%;
     left: 57%;
@@ -442,6 +445,7 @@ img {
 
 #sandwich {
     position: absolute;
+    bottom: 0;
     width: 3%;
     top: 65%;
     left: 59%;
@@ -450,6 +454,7 @@ img {
 
 #mickey {
     position: absolute;
+    bottom: 0;
     width: 13%;
     top: 73%;
     left: 41%;
@@ -458,14 +463,15 @@ img {
 
 #car {
     position: absolute;
+    bottom: 0;
     width: 10%;
     top: 55%;
     left: 20%;
-
 }
 
 #garbage {
     position: absolute;
+    bottom: 0;
     width: 15%;
     top: 60%;
     left: 52%;
@@ -475,9 +481,8 @@ img {
 #franklinsdf {
     position: absolute;
     width: 20%;
-
     bottom: 0;
-
+    left: 1%;
 }
 
 #penguin {
