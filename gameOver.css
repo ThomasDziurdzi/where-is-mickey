@@ -60,7 +60,7 @@ body {
     .titre {
       position: absolute;
       top: 10%;
-      left: 37%;
+      left: 30%;
 
       font-family: "Courier New", Courier, monospace;
       text-align: center;
@@ -124,6 +124,62 @@ body {
 /*-------------------------------------------------------*/
 /*--------------------------------------*/
 
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 98;
+}
+
+h1 span {
+  opacity: 0;
+  display: inline-block;
+  animation: animate 1s linear forwards;
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+    filter: blur(0px);
+  }
+}
+h1 span:nth-child(1) {
+  animation-delay: 1s;
+}
+h1 span:nth-child(2) {
+  animation-delay: 2s;
+}
+h1 span:nth-child(3) {
+  animation-delay: 2.5s;
+}
+h1 span:nth-child(4) {
+  animation-delay: 3s;
+}
+h1 span:nth-child(5) {
+  animation-delay: 3.5s;
+}
+h1 span:nth-child(6) {
+  animation-delay: 3.75s;
+}
+h1 span:nth-child(7) {
+  animation-delay: 4s;
+}
+
+h1 span:nth-child(10) {
+  animation-delay: 5s;
+}
+h1 span:nth-child(11) {
+  animation-delay: 5.5s;
+}
+h1 span:nth-child(12) {
+  animation-delay: 5.75s;
+}
+
 .audiogta {
   display: none;
 }
@@ -151,6 +207,26 @@ body {
   border: 100px;
 }
 
+#bouton.open {
+  display: block !important;
+}
+
+.bouton2 {
+  border-radius: 10px;
+}
+
+#bouton {
+  max-width: 500px;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 15px;
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  display: none;
+}
+
 @keyframes zoomIn {
   0% {
     transform: scale(0);
@@ -159,14 +235,4 @@ body {
   100% {
     transform: scale(1);
   }
-}
-
-.bouton {
-  border-radius: 12px;
-  height: 4rem;
-  align-items: center;
-  line-height: 1rem;
-  color: #fff;
-  background-color: black;
-  padding: 1rem;
 }
