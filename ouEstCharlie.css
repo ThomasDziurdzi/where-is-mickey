@@ -47,10 +47,7 @@ body {
   de la page*/
 }
 
-
 body {
-  cursor: url(./images/ruelle/sandwich.png) 2 2,pointer;
-  /* cursor:url(./images/mickey-la-souris.png) 2 2, pointer; */
   margin: 0;
   background-color: black;
 
@@ -72,7 +69,6 @@ body {
     margin: 0 auto;
     /*margin vertical à 0,
        permet de centrer l'image avec auto*/
-
 
        /*---------NAV------*/
        nav {
@@ -149,16 +145,16 @@ body {
 
 }
 
-/* pour masquer la boîte de dialogue */
+/* pour masquer les modal avant le click */
 .hidden {
   display: none; 
 } 
 
-/* style de la boîte de dialogue */
+/* style des modals */
 #dialogBoxHercule {
   position: fixed;
-  top: 60%;
-  left: 65%;
+  top: 50%;
+  left: 55%;
   transform: translate(-50%, -50%);
   background-color: var(--modalBackgound);
   color: var(--modalColor);
@@ -172,14 +168,43 @@ body {
   z-index: 1000;
 }   /*z-index 1000 = pour être sûr que la boîte sera en premier plan*/
 
+#dialogBoxCharlie {
+  position: fixed;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  background-color: var(--modalBackgound);
+  color: var(--modalColor);
+  text-align: center;
+  font-size: 1.8em;
+  font-family: var(--modalFontFamily);
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: var(--modalPadding);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, );
+  z-index: 1000;
+}
+
+/*pour le bouton fermer des modal*/
 .close {
   position: absolute;
   top: 1px;
   right: 10px;
-  cursor: pointer;
+  /* cursor: pointer; */
+  cursor: url(./images/ruelle/sandwich30px.png),auto;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #8888889d;
+  border-radius: 50%;
+  padding: 1px;
+  margin:10px;
+  width: 30px;
+  background:#88888876;
+  height:30px;
+  text-align:center;
 }
 
-.overlay{
+/*flouté du background au click sur les modals*/
+.overlay {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -191,46 +216,19 @@ body {
   backdrop-filter: blur(5px);
   z-index: 1;
 }
-
-/* modal Charlie*/
-.modalCharlie {
-  display: none;
+.overlayPageWin {
   position: fixed;
-  z-index: 3;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: var(--modalBackgound);
-  padding-top: 60px;
+  background: rgb(5, 4, 4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+  z-index: 9999; /* S'assure que l'overlay est au-dessus de tout */
 }
-
-.modalCharlie-content {
-  background-color: #fefefe;
-  margin: 5% auto;
-  width: 80%;
-  border: 1px solid #888;
-  color: var(--modalColor);
-  font-family: var(--modalFontFamily);
-  padding: var(--modalPadding);
-  box-shadow: var(--modalShadow);
-  border-radius: var(--modalBorderRadius);
-
+.overlayPageWin.active {
+  opacity: 1;
+  pointer-events: all;
 }
-
-.close-charlie-modal {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close-charlie-modal:hover,
-.close-charlie-modal:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-
