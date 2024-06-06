@@ -8,32 +8,39 @@
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon" />
 
-<body>
-    <main>
-        <div class="columns-container">
-            <div class="column first"></div>
-            <div class="column second"></div>
-            <div class="column third"></div>
-            <div class="column fourth"></div>
-            <div class="column fifth"></div>
-            <div class="column sixth"></div>
+    <body>
+        <main>
+            <div class="columns-container">
+                <!-- Colonnes générées via js -->
+            </div>
+            <div class="menu-container">
+                <div class="login-box">
+                    <form>
+                      <div class="user-box">
+                        <input type="text" name="" required="">
+                        <label>Username</label>
+                      </div>
+                      <div class="user-box">
+                        <input type="password" name="" required="">
+                        <label>Password</label>
+                      </div><center>
+                      <a href="#">
+                             SEND
+                         <span></span>
+                      </a></center>
+                    </form>
+                  </div>
+            </div>
+        </main>
+
+        
+        <div class="overlayPage"></div>
+        <div class="overlayModal hidden"></div>
+        <div class="modal hidden">
+            <!-- <div class="modal-image hidden"></div> -->
         </div>
-        <div class="menu-container">
-            <!-- <a class="connexion" href="#">Connexion</a> -->
-            <!-- <div class="sign-up">
-                <form action="sign-up-form">
-                    <label for="lastName">Nom</label>
-                    <input type="text" id="lastName" name="user-lastName">
-                    <label for="firstName">Prénom</label>
-                    <input type="text" id="firstName" name="user-firstName">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" name="password" id="password" placeholder="Minimum 10 caractères">
-                    <button type="submit">S'inscrire</button>
-                </form>
-            </div> -->
-        </div>
-    </main>
-    <script src="index.js"></script>
-</body>
+        <script type="module" src="./script/index.js" ></script>
+    </body>
+    
 
 </html>

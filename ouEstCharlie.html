@@ -35,16 +35,20 @@
           <span class="close">&times;</span>
           <p>Bravo! Tu as presque fini ton enquête.<br> 
             Il te reste à trouver l'assassin dans cette foule</p>
-          </div>
-          <div class="overlay hidden"></div>
-          <!--modal charlie-->
-          <div id="dialogBoxCharlie" class="hidden">
-            <!-- <div class="modalCharlie-content"> -->
-              <span class="close">&times;</span>
-              <p>Bravo! Tu as trouvé l'assasin Xavier Dupont de Mayonnaise</p>
-            <!-- </div> -->
-          </div>
-          <audio id="zoomSound" src="./audio/crowd-cheer-ii-6263.mp3"></audio>
-          <script src="./script/ouEstCharlie.js"></script>
+        </div>
+          
+        <!--modal charlie-->
+        <div id="dialogBoxCharlie" class="hidden">
+          <a class="close-charlie" href="win.html"><span class="close">&times;</span></a> 
+          <p>Bravo!<br>Tu as trouvé l'assasin : <br>Xavier Dupont de Mayonnaise</p>
+        </div>
+
+        <!--div flouté au click des modal-->
+        <div class="overlay hidden"></div>
+
+        <!--audio Charlie-->
+        <audio id="zoomSound" src="./audio/crowd-cheer-ii-6263.mp3"></audio>
+        <div class="overlayPageWin"></div>
+        <script src="./script/ouEstCharlie.js"></script>
 </body>
 </html>
