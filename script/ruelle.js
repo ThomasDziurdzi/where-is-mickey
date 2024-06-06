@@ -1,132 +1,182 @@
-console.log("JavaScript is working!");  // Vérifie que le script est chargé
-
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOM fully loaded and parsed");  // Vérifie que le DOM est complètement chargé
+    console.log("DOM fully loaded and parsed");
 
-    const images = document.querySelectorAll(".image-container img");  // Sélectionne toutes les images dans les conteneurs
-    const carSound = document.getElementById("car-sound");  // Sélectionne l'élément audio pour la voiture
-    const knifeSound = document.getElementById("knife-sound");  // Sélectionne l'élément audio pour le couteau
+    const images = document.querySelectorAll(".image-container img");
+    const carSound = document.getElementById("car-sound");
+    const knifeSound = document.getElementById("knife-sound");
     const gunSound = document.getElementById("gun-sound");
-    // Vérifie si les audios sont prêts à être joués
-    carSound.addEventListener('canplaythrough', () => {
-        console.log("Car audio is ready to play");
+    const bagSound = document.getElementById("bag-sound");
+    const sandwichSound = document.getElementById("sandwich-sound");
+    const launchSound = document.getElementById("missile-sound");
+    const backgroundMusic = document.getElementById("background-music");
+    const muteButton = document.getElementById("mute-button");
+    const unmuteButton = document.getElementById("unmute-button");
+
+    // Vérification de l'existence de l'élément et ajout d'un bouton de démarrage manuel si nécessaire
+    if (backgroundMusic) {
+        backgroundMusic.addEventListener('canplaythrough', () => {
+            console.log("Background music is ready to play");
+        });
+
+        // Tenter de démarrer la musique de fond
+        try {
+            backgroundMusic.currentTime = 0;
+            backgroundMusic.play().catch(error => {
+                console.error("Error playing background music:", error);
+                showPlayButton(); // Afficher un bouton pour permettre à l'utilisateur de démarrer la musique
+            });
+        } catch (error) {
+            console.error("Error playing background music:", error);
+            showPlayButton(); // Afficher un bouton pour permettre à l'utilisateur de démarrer la musique
+        }
+    }
+
+    // Fonction pour afficher un bouton de lecture si la lecture automatique échoue
+    function showPlayButton() {
+        const playButton = document.createElement('button');
+        playButton.id = 'play-button';
+        playButton.src = './images/play.png'; // Chemin de votre image pour "Play Music"
+        playButton.alt = 'Play Music';
+        playButton.style.position = 'fixed';
+        playButton.style.height = '40px';
+        playButton.style.top = '40px';
+        playButton.style.right = '200px';
+        playButton.style.zIndex = 1001;
+        document.body.appendChild(playButton);
+
+        playButton.addEventListener('click', () => {
+            backgroundMusic.play().then(() => {
+                playButton.style.display = 'none';
+            }).catch(error => {
+                console.error("Error playing background music after user interaction:", error);
+            });
+        });
+    }
+
+    if (muteButton && unmuteButton) {
+        muteButton.addEventListener('click', () => {
+            if (backgroundMusic) {
+                backgroundMusic.muted = true;
+            }
+            muteButton.style.display = 'none';
+            unmuteButton.style.display = 'block';
+        });
+
+        unmuteButton.addEventListener('click', () => {
+            if (backgroundMusic) {
+                backgroundMusic.muted = false;
+            }
+            muteButton.style.display = 'block';
+            unmuteButton.style.display = 'none';
+        });
+    }
+
+    const sounds = {
+        car: carSound,
+        knife: knifeSound,
+        gun: gunSound,
+        bag: bagSound,
+        sandwich: sandwichSound,
+        launch: launchSound,
+       
+    };
+
+    Object.keys(sounds).forEach(key => {
+        if (sounds[key]) {
+            sounds[key].addEventListener('canplaythrough', () => {
+                console.log(`${key} audio is ready to play`);
+            });
+
+            sounds[key].addEventListener('error', (e) => {
+                console.error(`Error loading ${key} audio`, e);
+            });
+        }
     });
 
-    knifeSound.addEventListener('canplaythrough', () => {
-        console.log("Knife audio is ready to play");
-    });
-
-    gunSound.addEventListener('canplaythrough', () => {
-        console.log("gun audio is ready to play");
-    });
-
-    // Gère les erreurs de chargement de l'audio
-    carSound.addEventListener('error', (e) => {
-        console.error("Error loading car audio", e);
-    });
-
-    knifeSound.addEventListener('error', (e) => {
-        console.error("Error loading knife audio", e);
-    });
-
-    gunSound.addEventListener('error', (e) => {
-        console.error("Error loading gun audio")
-    });
-
-    // Variable pour suivre si l'utilisateur a interagi avec la page
     let userInteracted = false;
 
-    // Fonction appelée lors de la première interaction de l'utilisateur
     function onUserInteraction() {
         userInteracted = true;
         document.removeEventListener('click', onUserInteraction);
         document.removeEventListener('keydown', onUserInteraction);
     }
 
-    // Ajoute des écouteurs pour détecter la première interaction de l'utilisateur
     document.addEventListener('click', onUserInteraction);
     document.addEventListener('keydown', onUserInteraction);
 
-    // Variables pour suivre si les effets sonores et de rotation ont été appliqués
-    let carEffectApplied = sessionStorage.getItem('carEffectApplied') === 'true';
-    let knifeEffectApplied = sessionStorage.getItem('knifeEffectApplied') === 'true';
-    let gunEffectApplied = sessionStorage.getItem('gunEffectApplied') === 'true';
+    let effectsApplied = {
+        car: sessionStorage.getItem('carEffectApplied') === 'true',
+        knife: sessionStorage.getItem('knifeEffectApplied') === 'true',
+        gun: sessionStorage.getItem('gunEffectApplied') === 'true',
+        bag: sessionStorage.getItem('bagEffectApplied') === 'true',
+        sandwich: sessionStorage.getItem('sandwichEffectApplied') === 'true',
+        launch: sessionStorage.getItem('launchEffectApplied') === 'true',
+        mickey: sessionStorage.getItem('mickeyEffectApplied') === 'true',
+        penguin: sessionStorage.getItem('penguinEffectApplied') === 'true',
+    };
 
     images.forEach(image => {
-        if (image.id !== "garbage") {
-            image.addEventListener("mouseover", function () {
-                image.style.transition = "transform 0.3s ease";  // Applique une transition à la transformation CSS
-                if (image.id === "knife" && !knifeEffectApplied) {
-                    image.style.transform = "scale(2.5)";  // Agrandit l'image du couteau
-                    knifeEffectApplied = true;  // Marque que l'effet a été appliqué pour le couteau
-                    sessionStorage.setItem('knifeEffectApplied', 'true');  // Enregistre l'état dans sessionStorage
-                    if (userInteracted) {
-                        knifeSound.currentTime = 0;  // Réinitialise le son à partir du début
-                        knifeSound.play().then(() => {
-                            console.log("Playing knife sound");
-                        }).catch(error => {
-                            console.error("Error playing knife sound", error);
-                        });
-                    } else {
-                        console.log("User has not interacted with the page yet");
-                    }
-                } else if (image.id === "car" && !carEffectApplied) {
-                    image.style.transform = "rotate(360deg)";  // Fait tourner l'image de la voiture
-                    carEffectApplied = true;  // Marque que l'effet a été appliqué pour la voiture
-                    sessionStorage.setItem('carEffectApplied', 'true');  // Enregistre l'état dans sessionStorage
-                    if (userInteracted) {
-                        carSound.currentTime = 0;  // Réinitialise le son à partir du début
-                        carSound.play().then(() => {
-                            console.log("Playing car sound");
-                        }).catch(error => {
-                            console.error("Error playing car sound", error);
-                        });
-                    } else {
-                        console.log("User has not interacted with the page yet");
-                    }
+        image.addEventListener("mouseover", function () {
+            console.log("Mouse over:", image.id);
 
-                }else if (image.id === "gun" && !gunEffectApplied) {
-                        image.style.transform = "scale(2.5)";  // Agrandit l'image du pistolet
-                        gunEffectApplied = true;  // Marque que l'effet a été appliqué pour le pistolet
-                        sessionStorage.setItem('gunEffectApplied', 'true');  // Enregistre l'état dans sessionStorage
-                        if (userInteracted) {
-                            gunSound.currentTime = 0;  // Réinitialise le son à partir du début
-                            gunSound.play().then(() => {
-                                console.log("Playing gun sound");
-                            }).catch(error => {
-                                console.error("Error playing gun sound", error);
-                            });
-                        } else {
-                            console.log("User has not interacted with the page yet");
-                        }
-        } else if (image.id === "gun" || image.id === "bag" || image.id === "sandwich" || image.id === "launch" || image.id === "knife") {
-            image.style.transform = "scale(2.5)";  // Agrandit ces images spécifiques
-        } else {
-            image.style.transform = "scale(1.2)";  // Agrandit les autres images de manière standard
-        }
-    });
+            if (image.id === "mickey" || image.id === "penguin") {
+                console.log(`${image.id} is hovered`);
+            }
 
-    image.addEventListener("mouseout", function () {
-        image.style.transition = "transform 0.3s ease";  // Applique une transition à la transformation CSS
-        if (image.id === "car" && carEffectApplied) {
+            image.style.transition = "transform 0.3s ease";
+
+            if (["knife", "gun", "bag", "sandwich", "launch", "mickey", "penguin"].includes(image.id) && !effectsApplied[image.id]) {
+                image.style.transform = "scale(2.5)";
+                effectsApplied[image.id] = true;
+                sessionStorage.setItem(`${image.id}EffectApplied`, 'true');
+
+                if (userInteracted && sounds[image.id]) {
+                    const sound = sounds[image.id];
+                    sound.currentTime = 0;
+                    sound.play().then(() => {
+                        console.log(`Playing ${image.id} sound`);
+                    }).catch(error => {
+                        console.error(`Error playing ${image.id} sound`, error);
+                    });
+                } else if (!userInteracted) {
+                    console.log("User has not interacted with the page yet");
+                }
+            } else if (image.id === "car" && !effectsApplied.car) {
+                image.style.transform = "rotate(360deg)";
+                effectsApplied.car = true;
+                sessionStorage.setItem('carEffectApplied', 'true');
+
+                if (userInteracted) {
+                    carSound.currentTime = 0;
+                    carSound.play().then(() => {
+                        console.log("Playing car sound");
+                    }).catch(error => {
+                        console.error("Error playing car sound", error);
+                    });
+                } else {
+                    console.log("User has not interacted with the page yet");
+                }
+            } else {
+                image.style.transform = "scale(1.2)";
+            }
+        });
+
+        image.addEventListener("mouseout", function () {
+            console.log("Mouse out:", image.id);
+
+            if (image.id === "mickey" || image.id === "penguin") {
+                console.log(`${image.id} is no longer hovered`);
+            }
+
+            image.style.transition = "transform 0.3s ease";
             setTimeout(() => {
-                image.style.transform = "rotate(0deg)";  // Réinitialise l'angle de rotation pour la voiture
-            }, 300);  // Ajoute un délai pour permettre de voir l'effet de réinitialisation
-        } else if (image.id === "knife" && knifeEffectApplied) {
-            setTimeout(() => {
-                image.style.transform = "scale(1)";  // Réinitialise la taille du couteau
-            }, 300);  // Ajoute un délai pour permettre de voir l'effet de réinitialisation
-        } else if (image.id === "gun" || image.id === "bag" || image.id === "sandwich" || image.id === "launch") {
-            setTimeout(() => {
-                image.style.transform = "scale(1)";  // Réinitialise la taille de ces images spécifiques
-            }, 300);  // Ajoute un délai pour permettre de voir l'effet de réinitialisation
-        } else {
-            image.style.transform = "scale(1)";  // Réinitialise la taille des autres images
-        }
-    });
-}
+                image.style.transform = "scale(1)";
+            }, 300);
+        });
     });
 });
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -137,6 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const penguinMessage2 = document.getElementById('manchotMessage2');
     const penguinMessage3 = document.getElementById('manchotmessage3');
     const penguinMessage4 = document.getElementById('manchotMessage4');
+    const penguinMessage5 = document.getElementById('manchotMessage5');
+    const closeBtnFoireuxL = document.getElementById('closeFoireuxL')
 
     //Voiture
     const carMessage = document.getElementById('carMessage');
@@ -200,6 +252,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextPenguinToFranklin = document.getElementById('nextFranklin4');
     const nextFranklinToPenguin = document.getElementById('nextFranklin5');
     const unlockGarbage = document.getElementById('nextFranklin6');
+
+
+    //Close message Foireux :
+    closeBtnFoireuxL.addEventListener('click', () => {
+        penguinMessage5.style.display = "none";
+    })
+
+    //Message inspecteur Foireux :
+    penguinImage.addEventListener('click', () => {
+        penguinMessage5.style.display = 'block';
+    })
+
 
     //Crime weapon discoverd :
     nextBtnSandwich2.addEventListener('click', () => {
@@ -344,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Show the penguin message when the penguin image is clicked
-    penguinImage.addEventListener('click', () => {
+    window.addEventListener('load', () => {
         penguinPopup.style.display = 'block';
     });
 
@@ -383,13 +447,3 @@ document.addEventListener('DOMContentLoaded', () => {
         lastTalkOfMickey.style.display = 'none';
     });
 });
-
-
-
-
-
-
-
-
-
-
