@@ -46,7 +46,7 @@ body {
                 grid-template-columns: repeat(6, 1fr);
                 overflow: hidden;
 
-                .column {
+                .columns {
                     transform-origin: center;
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -169,7 +169,7 @@ body {
     }
 
 
-/* Styles pour l'overlay */
+/*Overlay au changement de page */
 .overlayPage {
     position: fixed;
     top: 0;
@@ -182,12 +182,12 @@ body {
     transition: opacity 1s ease;
     z-index: 9999; /* S'assure que l'overlay est au-dessus de tout */
   }
-  
   .overlayPage.active {
     opacity: 1;
     pointer-events: all;
   }
-  
+
+ /* affichage modale characters au click sur colonne */
   .modal {
     position: fixed;
     height: 76vh;
@@ -195,12 +195,12 @@ body {
     top: 50%;
     background-repeat: no-repeat;
     background-size: contain;
+    border-radius: 20px;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: fade-in-animation 0.4s linear 0s 1 normal both running;
+    animation: fade-in-animation 0.3s linear 0s 1 normal both running;
     z-index: 101;
   }
-
   @keyframes fade-in-animation {
     0% {
       filter: blur(3px);
@@ -212,12 +212,9 @@ body {
       opacity: 1;
     }
   }
-  
-  .hidden {
-    display: none;
-  }
 
-  .overlayModal {
+  /* Affichage overlay characters au click sur colonne */
+.overlayModal {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -229,4 +226,9 @@ body {
     backdrop-filter: blur(5px);
     z-index: 100;
     animation: fade-in-animation 0.4s linear 0s 1 normal both running;
+  }
+
+
+  .hidden {
+    display: none;
   }
