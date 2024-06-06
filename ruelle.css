@@ -39,6 +39,9 @@ body {
     background-color: black;
 }
 
+
+
+
 .background-container {
     background-image: url("./images/ruelle/darkstreet.jpg");
     background-size: contain;
@@ -102,12 +105,6 @@ nav>ul>li>a {
     text-decoration: none;
     padding: 1rem;
 }
-
-
-
-
-
-
 
 
 
@@ -287,161 +284,15 @@ nav>ul>li>a>span {
     font-size: 12px;
 }
 
-.dialog {
-    display: none;
-    position: absolute;
-    background-color: white;
-    padding: 5px;
-    border-radius: 8px;
-    color: black;
-    top: -20px;
-    /* Ajuster la position verticale */
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    z-index: 10;
-    /* Pour que les bulles soient au-dessus des images */
-}
-
-#dialog-mickey {
-
-    top: 80%;
-    left: 38%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-}
-
-
-@keyframes move-dialog {
-    0% {
-        transform: translateX(-50%);
-    }
-
-    50% {
-        transform: translateX(-40%);
-
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-#dialog-franklinsdf {
-    top: 75%;
-    left: 21%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-}
-
-#dialog-car {
-
-    top: 60%;
-    left: 33%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-}
-
-#dialog-mickey {
-
-    top: 80%;
-    left: 38%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-
-}
-
-
-
-
-
-#dialog-garbage {
-
-    top: 85%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-
-}
-
-#dialog-penguin {
-
-    top: 71%;
-    left: 73%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-}
-
-#dialog-bag {
-
-    top: 87%;
-    left: 56%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-}
-
-#dialog-knife {
-
-    top: 82%;
-    left: 67%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-}
-
-#dialog-sandwich {
-
-    top: 67%;
-    left: 65%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-}
-
-#dialog-launch {
-
-    top: 63%;
-    left: 54%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-}
-
-#dialog-gun {
-
-    top: 89%;
-    left: 61%;
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-}
-
-#dialog-garbage {
-
-
-    top: 73%;
-    left: 65%;
-
-
-    transform: translate(-50%, -50%);
-    animation: move-dialog 3s infinite;
-}
 
 
 
 
 
 
-#gun:hover+.dialog,
-#knife:hover+.dialog,
-#launch:hover+.dialog,
-#bag:hover+.dialog,
-#sandwich:hover+.dialog,
-#mickey:hover+.dialog,
-#car:hover+.dialog,
-#garbage:hover+.dialog,
-#franklinsdf:hover+.dialog,
-#penguin:hover+.dialog {
-    display: block;
 
 
-}
+
 
 #gun {
     position: absolute;
@@ -545,11 +396,12 @@ nav>ul>li>a>span {
 
 }
 
+
 .popupS {
     display: none;
     position: fixed;
-    width: 25%;
-    height: 20%;
+    width: 10%;
+    height: 10%;
     top: 30%;
     right: 35%;
     transform: translate(-50%, -50%);
@@ -564,8 +416,8 @@ nav>ul>li>a>span {
 .popupR {
     display: none;
     position: fixed;
-    width: 25%;
-    height: 20%;
+    width: 10%;
+    height: 10%;
     top: 55%;
     right: 35%;
     transform: translate(-50%, -50%);
@@ -580,8 +432,8 @@ nav>ul>li>a>span {
 .popupA {
     display: none;
     position: fixed;
-    width: 25%;
-    height: 20%;
+    width: 10%;
+    height: 10%;
     top: 55%;
     right: 5%;
     transform: translate(-50%, -50%);
@@ -596,8 +448,8 @@ nav>ul>li>a>span {
 .popupSa {
     display: none;
     position: fixed;
-    width: 25%;
-    height: 20%;
+    width: 10%;
+    height: 10%;
     top: 30%;
     right: 5%;
     transform: translate(-50%, -50%);
@@ -609,3 +461,7 @@ nav>ul>li>a>span {
     background-color: white;
 
 }
+
+
+
+
