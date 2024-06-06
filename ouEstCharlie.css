@@ -47,10 +47,7 @@ body {
   de la page*/
 }
 
-
 body {
-  cursor: url(./images/ruelle/sandwich.png) 2 2,pointer;
-  /* cursor:url(./images/mickey-la-souris.png) 2 2, pointer; */
   margin: 0;
   background-color: black;
 
@@ -149,12 +146,12 @@ body {
 
 }
 
-/* pour masquer la boîte de dialogue */
+/* pour masquer les boîtes de dialogue */
 .hidden {
   display: none; 
 } 
 
-/* style de la boîte de dialogue */
+/* style des boîtes de dialogue */
 #dialogBoxHercule {
   position: fixed;
   top: 50%;
@@ -172,23 +169,37 @@ body {
   z-index: 1000;
 }   /*z-index 1000 = pour être sûr que la boîte sera en premier plan*/
 
+#dialogBoxCharlie {
+  position: fixed;
+  top: 10%;
+  left: 25%;
+  /* width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--modalBackgound);
+  padding-top: 60px;
+  z-index: 1000; */
+}
+
 .close {
   position: absolute;
   top: 1px;
   right: 10px;
-  cursor: pointer;
+  /* cursor: pointer; */
+  cursor: url(./images/ruelle/sandwich30px.png),auto;
+  font-family: 'Courier New', Courier, monospace;
   background-color: #8888889d;
   border-radius: 50%;
   padding: 1px;
   margin:10px;
-  width:100px;
-  background:#888888c4;
-  height:100px;
+  width: 30px;
+  background:#88888876;
+  height:30px;
   text-align:center;
-  <strong>border-radius:100px;</strong>
+  /* <strong>border-radius:100px;</strong> */
 }
 
-.overlay{
+.overlay {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -201,19 +212,8 @@ body {
   z-index: 1;
 }
 
-/* modal Charlie*/
-.modalCharlie {
-  display: none;
-  position: fixed;
-  z-index: 3;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: var(--modalBackgound);
-  padding-top: 60px;
-}
+
+
 
 .modalCharlie-content {
   background-color: #fefefe;
@@ -225,6 +225,7 @@ body {
   padding: var(--modalPadding);
   box-shadow: var(--modalShadow);
   border-radius: var(--modalBorderRadius);
+  z-index: 1002;
 
 }
 
