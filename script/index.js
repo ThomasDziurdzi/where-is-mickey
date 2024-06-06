@@ -5,32 +5,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // creating columns of characters
     const columnContainer = document.querySelector('.columns-container');
 
-    function createColumn(image) {
+    function createColumn(image, index) {
         const columnCharacter = document.createElement('div');
         columnCharacter.classList.add('column');
         columnCharacter.style.backgroundImage = `url(${image})`;
+        columnCharacter.dataset.index = index; 
         columnContainer.appendChild(columnCharacter);
     }
     for (let i = 0; i < characters.length; i++) {
-        createColumn(characters[i].imgCut)
+        createColumn(characters[i].imgCut, i)
         
     }
 
-    const beforeDiv = document.querySelector('.overlayModal')
-    function createModal(image){
-        const modal = document.createElement('div');
-        modal.classList.add('modal')
-        modal.classList.add('hidden')
-        modal.style.backgroundImage = `url(${image})`;
-        beforeDiv.insertAdjacentElement("afterend", modal);
-    }
-    for (let i = 0; i < characters.length; i++) {
-        createModal(characters[i].image)
-    }
+    // const modal = document.querySelector('.modal');
+    // function createModal(image){
+    //     const modalImage = document.createElement('div');
+    //     modalImage.classList.add('modal-image')
+    //     modalImage.classList.add('hidden')
+    //     modalImage.style.backgroundImage = `url(${image})`;
+    //     modal.appendChild(modalImage)
+    // }
+    // for (let i = 0; i < characters.length; i++) {
+    //     createModal(characters[i].image)
+    // }
     //filters when mouseover and mouseout on columns
     //Opening Modal
     const column = document.querySelectorAll('.column');
     const modal = document.querySelector('.modal');
+    // const modalImage = document.querySelector(".modal-image")
     const overlayModal = document.querySelector('.overlayModal');
 
     column.forEach((col) => {
@@ -42,11 +44,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         col.addEventListener('click', function () {
             // Get the index from the data attribute
             const index = col.dataset.index;
+            
            // Find the corresponding character object
            const character = characters[index];
-            modal.classList.remove('modal-hidden')
-            overlayModal.classList.remove('modal-hidden')
-            modal.style.backgroundImage = `url(${character.imgCut})`;
+            modal.classList.remove('hidden')
+            // modalImage.classList.remove('hidden')
+            overlayModal.classList.remove('hidden')
+            modal.style.backgroundImage = `url(${character.image})`
+            
            
         });
     });

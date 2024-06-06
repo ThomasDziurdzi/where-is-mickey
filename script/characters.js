@@ -24,7 +24,7 @@ const characters = [
         id: 4,
         name: 'Daffy Duck',
         content: "qsdqdqfggsdf",
-        image: './images/menu/daffy-duck-wearing-as-a-bartender-he-looks-completely-stupid-both-of-his-eyes-is-looking-in-a-diff.jpeg',
+        image: './images/menu/daffy.jpeg',
         imgCut: 'images/menu/daffycutcolumns.png'
     },
     {
