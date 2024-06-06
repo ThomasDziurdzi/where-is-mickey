@@ -209,10 +209,20 @@ h1 span:nth-child(12) {
 
 #bouton.open {
   display: block !important;
+  box-shadow: black;
 }
 
 .bouton2 {
   border-radius: 10px;
+}
+
+.bouton3 {
+  border-radius: 40px;
+  width: 20%;
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  height: 15%;
 }
 
 #bouton {
