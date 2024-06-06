@@ -418,7 +418,7 @@ nav>ul>li>a>span {
     top: 73%;
     left: 65%;
 
-  
+
     transform: translate(-50%, -50%);
     animation: move-dialog 3s infinite;
 }
@@ -541,6 +541,7 @@ nav>ul>li>a>span {
     height: 100%;
     position: absolute;
     transition: transform 2s ease-in-out;
+    cursor: pointer;
 
 }
 

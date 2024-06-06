@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeBtnFoireux2 = document.getElementById('closeFoireux2');
 
     //Close foireux 2nd Message
-    // closeBtnFoireux2.addEventListener('click', () => {
-    //     foireuxMessage2.style.display = "none";
-    // })
+    closeBtnFoireux2.addEventListener('click', () => {
+        foireuxMessage2.style.display = "none";
+    })
 
     //Foireux 2nd Message 
     foireuxImage.addEventListener('click', () => {
