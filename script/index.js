@@ -1,9 +1,7 @@
 import characters from './characters.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  
-  
-    
+
     // creating columns of characters
     const columnContainer = document.querySelector('.columns-container');
 
@@ -81,39 +79,54 @@ document.addEventListener('DOMContentLoaded', (event) => {
         })
     })
 
+//Transition for main page to ruelle page
+function buttonTransition(classButton, overlay) {
+    const transitionLink = document.querySelector(`.${classButton}`);
+    const overlayAnimation = document.querySelector(`.${overlay}`);
 
-    //Transition for main page to ruelle page
-    function buttonTransition(classButton, overlay) {
-        const transitionLink = document.querySelector(`.${classButton}`);
-        const overlayAnimation = document.querySelector(`.${overlay}`);
+    if (transitionLink) {
+        transitionLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetHref = transitionLink.getAttribute('href');
 
-        if (transitionLink) {
-            transitionLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetHref = transitionLink.getAttribute('href');
+            overlayAnimation.classList.add('active');
 
-                overlayAnimation.classList.add('active');
-
-                setTimeout(() => {
-                    window.location.href = targetHref;
-                }, 1000);
-            });
-        }
+            setTimeout(() => {
+                window.location.href = targetHref;
+            }, 500);
+        });
     }
-
-    // buttonTransition('transition-button', 'overlayPageTwo');
+}
+   
+    //Modale link selection
     const playButton = document.querySelector('.play-button')
     const startModal = document.querySelector('.start-modal');
+    
     playButton.addEventListener('click', function() {
         startModal.classList.remove('hidden');
-        console.log(modal)
+        const startTitleModal = document.createElement("h2");
+        startTitleModal.textContent = " Êtes-vous prêts à entrer dans un monde vide de sens ?";
+        const startLinkModal = document.createElement('div');
+        startLinkModal.classList.add('link-modal');
+
+        const buttonNoModal = document.createElement("a");
+        buttonNoModal.classList.add('no-modal');
+        buttonNoModal.href = "./gameOver.html";
+        buttonNoModal.textContent = "Non merci";
+
+        const buttonYesModal = document.createElement("a");
+        buttonYesModal.classList.add('yes-modal');
+        buttonYesModal.href = "./ruelle.html";
+        buttonYesModal.textContent = "Allons-y!";
+        overlayModal.classList.remove('hidden')
+
+        startModal.appendChild(startTitleModal);
+        startModal.appendChild(startLinkModal);
+        startLinkModal.appendChild(buttonNoModal);
+        startLinkModal.appendChild(buttonYesModal);
+        
+        buttonTransition('no-modal','overlayChangePage');
+        buttonTransition('yes-modal','overlayChangePage');
     })
+    buttonTransition('connexion','overlayChangePage');
 });
-
-
-    
-
-
-
-
-
