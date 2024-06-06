@@ -1,7 +1,9 @@
 import characters from './characters.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
-
+  
+  
+    
     // creating columns of characters
     const columnContainer = document.querySelector('.columns-container');
 
@@ -74,7 +76,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     modal.style.backgroundImage = '';
                     modal.classList.remove('fade-out');
                     overlayModal.classList.remove('fade-out');
-                }, 300);
+                }, 200);
             }
         })
     })
@@ -99,7 +101,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    buttonTransition('transition-button', 'overlayPage');
+    // buttonTransition('transition-button', 'overlayPageTwo');
+    const playButton = document.querySelector('.play-button')
+    const startModal = document.querySelector('.start-modal');
+    playButton.addEventListener('click', function() {
+        startModal.classList.remove('hidden');
+        console.log(modal)
+    })
 });
 
 

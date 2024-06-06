@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon" />
 
-<body>
+<body class="overlayInitial">
     <main>
         <div class="columns-container">
             <!-- Colonnes générées via js -->
@@ -19,16 +19,14 @@
                 <h1>Où est Mickey?</h1>
             </div>
             <div class="play-button">
-                <a href="./ruelle.html" class="transition-button">COMMENCER</a>
+                <a href="#" class="transition-button">COMMENCER</a>
             </div>
         </div>
     </main>
-
-    <div class="overlayPage"></div>
+    <div class="start-modal hidden"></div>
     <div class="overlayModal hidden"></div>
-    <div class="modal hidden">
-        <!-- <div class="modal-image hidden"></div> -->
-    </div>
+    <div class="modal hidden"></div>
+    <div class="overlayPageTwo"></div>
     <script type="module" src="./script/index.js" ></script>
 </body>
 
