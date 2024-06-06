@@ -260,6 +260,7 @@ p {
     margin-left: -3rem;
     border: solid 8px #000000;
     transition: transform 0.5s ease-in-out;
+    z-index: 2;
   }
 }
 
