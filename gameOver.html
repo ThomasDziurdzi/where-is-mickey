@@ -14,10 +14,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 
   <body>
-    <img
-      class="bouton4"
-      src="images/game-over/bouton.png"
-      alt="image de bouton"
     />
     <div class="background-container">
       <section>
@@ -37,16 +33,45 @@
 
       <!-- <h1 class="titre">GAME OVER</h1>-->
       <div>
-        <button id="bouton">
-          J'ai vraiment eu du mal a développer cette merde
-        </button>
-        <button class="bouton2" onclick="togglePopup()">
-          Découvrir ce que Mickey dois vous dire
-        </button>
+        <div id="videoContainer">
+          <video
+            controls="controls"
+            autoplay="autoplay"
+            id="videoPlayer"
+            class="play"
+            width="600"
+            controls
+          >
+            <source src="images/game-over/videoplayback.mp4" type="video/mp4" />
+          </video>
+        </div>
 
-        <button class="bouton3">
+        <button id="openPopup" class="custom-button">PUSH</button>
+
+        <div id="popup" class="popup2">
+          <div class="popup-content">
+            <h2>Veux tu prendre ta revanche sur le pingouin ?</h2>
+            <button id="Manchot" onclick="chooseOption('Option1')">
+              <a href="images/game-over/videoplayback.mp4">Oui</a>
+            </button>
+            <button onclick="chooseOption('Option2')">Non</button>
+
+            <button onclick="closePopup()">Fermer</button>
+          </div>
+        </div>
+        <!-- <img
+          onclick="togglePopup()"
+          id="bouton4"
+          src="images/game-over/bouton.png"
+          alt="image de bouton"
+        /> -->
+        <p class="push"></p>
+
+        <button></button>
+
+        <!-- --<button id="bouton3">
           Veux-tu prendre ta revanche en tuant le pingouin ?
-        </button>
+        </button> -->
       </div>
       <nav>
         <a href="index.html" class="logo">Logo</a>
@@ -63,13 +88,13 @@
           </li>
         </ul>
       </nav>
-      <audio
+      <!-- <audio
         src="audio/audiogta.mp3"
         class="audiogta"
         controls="controls"
         loop="loop"
         autoplay="autoplay"
-      ></audio>
+      ></audio> -->
       <source src="audio/audiogta.mp3" />
       -->
     </div>

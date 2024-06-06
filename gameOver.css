@@ -73,6 +73,60 @@ body {
       animation: zoomIn 2s ease-in-out;
     }
 
+    .popup2 {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .popup-content {
+      background-color: white;
+      width: 50%;
+      margin: 100px auto;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    #videoPlayer.play {
+      display: none;
+    }
+
+    .custom-button {
+      background-color: #ff0000; /* Rouge */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 50px 50px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); /* Effet de creusement */
+      transition: transform 0.3s, box-shadow 0.3s; /* Transition pour l'effet */
+      position: absolute;
+      top: 20%;
+      right: 10%;
+      height: 10%;
+    }
+
+    .custom-button:hover {
+      transform: translateY(2px); /* Effet de légère montée au survol */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Effet d'ombre plus léger au survol */
+    }
+
+    #bouton4 {
+      background-image: url(images/game-over/bouton.png);
+      height: auto;
+      width: 10%;
+      position: absolute;
+      top: 10%;
+      right: 5%;
+      background-size: contain;
+    }
+
     /*---------NAV------*/
     nav {
       position: absolute;
@@ -216,13 +270,18 @@ h1 span:nth-child(12) {
   border-radius: 10px;
 }
 
-.bouton3 {
+#bouton3 {
   border-radius: 40px;
   width: 20%;
   position: absolute;
   top: 20%;
   left: 80%;
   height: 15%;
+}
+
+#bouton3.active {
+  display: none;
+  display: block !important;
 }
 
 #bouton {
