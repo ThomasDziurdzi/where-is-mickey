@@ -10,11 +10,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const porkyImage = document.getElementById('pork');
     const porkyMessage = document.getElementById('porkyMessage');
     const closeBtnPorky = document.getElementById('closePorky');
+    const porkyMessage2 = document.getElementById('porkyMessage2');
+    const closeBtnPorky2 = document.getElementById('closePorky2');
 
     //Bugs Bunny the mac
     const bugsImage = document.getElementById('lapin');
     const bugsMessage = document.getElementById('bugsMessage');
     const closeBtnBugs = document.getElementById('closeBugs');
+    const bugsMessage2 = document.getElementById('bugsMessage2');
+    const closeBtnBugs2 = document.getElementById('closeBugs2');
 
     //Daffy the Bartender
     const daffyImage = document.getElementById('canard');
@@ -40,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeBtnFoireux = document.getElementById('closeFoireux');
     const closeBtnFoireux2 = document.getElementById('closeFoireux2');
 
+    //Devinette 
 
 
 
@@ -67,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //Close Minnie 1st message
     closeBtnMinnie.addEventListener('click', () => {
         minnieMessage.style.display = 'none';
+        minnieMessageDisplay = true;
     })
 
     //Minnie 1st Message
@@ -99,39 +105,79 @@ document.addEventListener('DOMContentLoaded', function () {
         daffyMessage2.style.display = 'none';
     })
 
+    let bugsMessageDisplay = false;
+
     //Daffy second message:
     daffyImage.addEventListener('click', () => {
-        daffyMessage2.style.display = "block";
+        if (bugsMessageDisplay) {
+            daffyMessage2.style.display = "block";
+        } else {
+            daffyMessage.style.display = "block";
 
+        }
+
+    });
+
+    //bugs close second message 
+    closeBtnBugs2.addEventListener('click', () => {
+        bugsMessage2.style.display = "none";
+        bugsBunnyDisplay = true;
+        Bugsdevinette = true;
     })
 
-    // //Daffy close 1st message
-    // closeBtnDaffy.addEventListener('click', () => {
-    //     daffyMessage.style.display = "none";
-    // })
+    //Unlock daffy dialogue
+    closeBtnBugs.addEventListener('click', () => {
+        bugsMessageDisplay = true;
+    })
 
-    // //Daffy 1st message
-    // daffyImage.addEventListener('click', () => {
-    //     daffyMessage.style.display = "block";
-    // })
+    let minnieMessageDisplay = false;
+    let bugsBunnyDisplay = false;
 
     //Bugs close 1st message
     closeBtnBugs.addEventListener('click', () => {
         bugsMessage.style.display = 'none';
+
     })
 
     //Bugs 1st message
     bugsImage.addEventListener('click', () => {
-        bugsMessage.style.display = 'block';
+        if (minnieMessageDisplay) {
+            bugsMessage2.style.display = 'block';
+        } else if (minnieMessageDisplay && bugsBunnyDisplay) {
+
+        }
+        else {
+            bugsMessage.style.display = 'block';
+        }
     })
+
+    //Daffy close 1st message
+    closeBtnDaffy.addEventListener('click', () => {
+        daffyMessage.style.display = "none";
+    })
+
+    // //Daffy 1st message
+    // daffyImage.addEventListener('click', () => {
+    //     
+    // })
+
+    //porky close 2nd message
+    closeBtnPorky2.addEventListener('click', () => {
+        porkyMessage2.style.display = "none";
+    }
+    )
+
 
     //Porky close 1st message
     closeBtnPorky.addEventListener('click', () => {
         porkyMessage.style.display = 'none';
     })
-
+    let Bugsdevinette = false;
     //Porky 1st message
     porkyImage.addEventListener('click', () => {
-        porkyMessage.style.display = "block";
+        if (Bugsdevinette) {
+            porkyMessage2.style.display = "block";
+        } else { porkyMessage.style.display = "block"; }
+
     })
 })
