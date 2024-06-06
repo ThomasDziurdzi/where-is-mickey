@@ -143,6 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const penguinMessage2 = document.getElementById('manchotMessage2');
     const penguinMessage3 = document.getElementById('manchotmessage3');
     const penguinMessage4 = document.getElementById('manchotMessage4');
+    const penguinMessage5 = document.getElementById('manchotMessage5');
+    const closeBtnFoireuxL = document.getElementById('closeFoireuxL')
 
     //Voiture
     const carMessage = document.getElementById('carMessage');
@@ -206,6 +208,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextPenguinToFranklin = document.getElementById('nextFranklin4');
     const nextFranklinToPenguin = document.getElementById('nextFranklin5');
     const unlockGarbage = document.getElementById('nextFranklin6');
+
+
+    //Close message Foireux :
+    closeBtnFoireuxL.addEventListener('click', () => {
+        penguinMessage5.style.display = "none";
+    })
+
+    //Message inspecteur Foireux :
+    penguinImage.addEventListener('click', () => {
+        penguinMessage5.style.display = 'block';
+    })
+
 
     //Crime weapon discoverd :
     nextBtnSandwich2.addEventListener('click', () => {
@@ -350,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Show the penguin message when the penguin image is clicked
-    penguinImage.addEventListener('click', () => {
+    window.addEventListener('load', () => {
         penguinPopup.style.display = 'block';
     });
 
