@@ -286,3 +286,35 @@ body {
   border-radius: 10px;
   text-align: center;
 }
+
+/* Player choices */
+
+.popupJ1 {
+  display: none;
+  position: fixed;
+  width: 30%;
+  top: 30%;
+  right: 35%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popupJ2 {
+  display: none;
+  position: fixed;
+  width: 20%;
+  top: 30%;
+  right: 15%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}

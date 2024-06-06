@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    //Player interaction 
+    const barChoice1 = document.getElementById('playerChoice1');
+    const barChoice2 = document.getElementById('playerChoice2');
+    const nextBtnJ1 = document.getElementById('nextPlayer1');
+    const nextBtnJ2 = document.getElementById('nextPlayer2');
+
     //Porky Chris-P Bacon
     const porkyImage = document.getElementById('pork');
     const porkyMessage = document.getElementById('porkyMessage');
@@ -14,6 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const daffyImage = document.getElementById('canard');
     const daffyMessage = document.getElementById('daffyMessage');
     const closeBtnDaffy = document.getElementById('closeDaffy');
+    const daffyMessage2 = document.getElementById('daffyMessage2');
+    const nextDaffy = document.getElementById('nextDaffy');
+    const daffyMessage3 = document.getElementById('daffyMessage3');
+    const daffyMessage4 = document.getElementById('daffyMessage4');
+    const nextDaffy2 = document.getElementById('nextDaffy2');
+    const closeBtnDaffy2 = document.getElementById('closeDaffy2');
 
     //Minnie the whore
 
@@ -27,6 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const foireuxMessage2 = document.getElementById('foireuxMessage2');
     const closeBtnFoireux = document.getElementById('closeFoireux');
     const closeBtnFoireux2 = document.getElementById('closeFoireux2');
+
+
+
 
     //Close foireux 2nd Message
     closeBtnFoireux2.addEventListener('click', () => {
@@ -58,16 +73,47 @@ document.addEventListener('DOMContentLoaded', function () {
     minnieImage.addEventListener('click', () => {
         minnieMessage.style.display = "block";
     })
-
-    //Daffy close 1st message
-    closeBtnDaffy.addEventListener('click', () => {
-        daffyMessage.style.display = "none";
+    // close water message
+    closeBtnDaffy2.addEventListener('click', () => {
+        daffyMessage3.style.display = 'none'
     })
 
-    //Daffy 1st message
+    // choice water
+    nextBtnJ2.addEventListener('click', () => {
+        daffyMessage3.style.display = "block";
+        barChoice1.style.display = "none";
+        barChoice2.style.display = "none";
+    })
+
+    //Choice game over
+    nextBtnJ1.addEventListener('click', () => {
+        daffyMessage4.style.display = 'block';
+        barChoice1.style.display = "none";
+        barChoice2.style.display = "none";
+    })
+
+    //Choice players
+    nextDaffy.addEventListener('click', () => {
+        barChoice1.style.display = "block";
+        barChoice2.style.display = "block";
+        daffyMessage2.style.display = 'none';
+    })
+
+    //Daffy second message:
     daffyImage.addEventListener('click', () => {
-        daffyMessage.style.display = "block";
+        daffyMessage2.style.display = "block";
+
     })
+
+    // //Daffy close 1st message
+    // closeBtnDaffy.addEventListener('click', () => {
+    //     daffyMessage.style.display = "none";
+    // })
+
+    // //Daffy 1st message
+    // daffyImage.addEventListener('click', () => {
+    //     daffyMessage.style.display = "block";
+    // })
 
     //Bugs close 1st message
     closeBtnBugs.addEventListener('click', () => {
