@@ -1,57 +1,69 @@
-//attendre que la page soit chargée
+//1.attendre que la page soit chargée
 document.addEventListener('DOMContentLoaded', function() {
-    //     // trouver le bouton et la boîte de dialogue dans le DOM
+    // 2.Créer mes variables sur les éléments dans le DOM (image à cliquer, boîte, flouté et son)
     const herculeButton = document.getElementById('herculeFoireux');
-    //     //herculeFoireux = id de l'image dans le html
     const dialogBoxHercule = document.getElementById('dialogBoxHercule');
     const overlay = document.querySelector('.overlay');
-    
-    //     // montrer la boîte de dialogue quand on passe la souris sur le bouton
+    const charlieButton = document.getElementById('charlie');
+    const dialogBoxCharlie = document.getElementById('dialogBoxCharlie');
+    const zoomSound = document.getElementById('zoomSound')
+    // événement bouton Hercule
     herculeButton.addEventListener('click', function() {
-        console.log('Image clicked'); //log pour vérifier que l'événement est déclenché
         dialogBoxHercule.classList.toggle('hidden');//enlever la classe 'hidden' de la boîte de dialogue pour qu'elle apparaisse
         overlay.classList.toggle('hidden');
-        document.querySelector(".close").addEventListener("click",function(){
-            dialogBoxHercule.classList.add("hidden");
+        document.querySelector(".close").addEventListener('click',function(){
+            dialogBoxHercule.classList.add('hidden');
             overlay.classList.toggle('hidden');
         });
     });
-    //survol image Charlie
-    const charlieImage = document.getElementById('charlie');
-    const zoomSound = document.getElementById('zoomSound')
-    
-    charlieImage.addEventListener('click', function() {
+    // événement bouton Charlie
+    charlieButton.addEventListener('click', function() {
+        dialogBoxCharlie.classList.toggle('hidden');
+        overlay.classList.toggle('hidden');
         zoomSound.currentTime = 0; //commencer à jouer depuis le début
+        zoomSound.volume = 1;
         zoomSound.play();
-
-        //Arrêter le son après une durée spécifique (en millisecondes)
         setTimeout(function() {
-            zoomSound.pause();
-        }, 2500);
+            fadeOutSound(zoomSound, 3000);// Lancer le fadeout sur 3 secondes
+        }, 3000);
+        // document.getElementById('dialogBoxCharlie').addEventListener('click', function() {
+        //     window.location.href = 'win.html';
+        // });
     });
-    
-    // Fonction pour afficher la modal Charlie
-    function showModalCharlie() {
-        console.log('showModalCharlie called');
-        const modalCharlie = document.getElementById('dialogBoxCharlie');
-        const closeModalCharlie = document.querySelector('.close-charlie-modal');
-        
-        modalCharlie.classList.remove('hiddenCharlie');
-        modalCharlie.style.display = 'block';
-        console.log('Modal Charlie should now be visible');
 
-        // Fermer la modal
-        closeModalCharlie.addEventListener('click', function() {
-            console.log('Close modal Charlie button clicked');
-            modalCharlie.style.display = 'none';
-        });
-
-        // Fermer la modal quand on clique en dehors de la modal
-        window.addEventListener('click', function(event) {
-            if (event.target == modalCharlie) {
-                console.log('Clicked outside of modal, closing modal');
-                modalCharlie.style.display = 'none';
+    //fonction pour le fadeout
+    function fadeOutSound(sound, duration) {
+        const step = 0.1;// Le pas pour réduire le volume
+        const interval = duration / (1 / step);// Durée entre chaque réduction de volume
+        const fadeInterval = setInterval(function() {
+            if (sound.volume > step) {
+                sound.volume -= step;// Réduire le volume par le pas défini
+            } else {
+                sound.volume = 0;// Mettre le volume à zéro
+                sound.pause();// Mettre le son en pause
+                clearInterval(fadeInterval);// Arrêter l'intervalle
             }
-        });
+        }, interval);
     }
+    function buttonTransition(classButton, overlay) {
+        const transitionLink = document.querySelector(`.${classButton}`);
+        const overlayAnimation = document.querySelector(`.${overlay}`);
+
+        if (transitionLink) {
+            transitionLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetHref = transitionLink.getAttribute('href');
+
+                overlayAnimation.classList.add('active');
+
+                setTimeout(() => {
+                    window.location.href = targetHref;
+                }, 1000);
+            });
+        }
+    }
+    buttonTransition('close-charlie','overlayPageWin')
 });
+
+
+
