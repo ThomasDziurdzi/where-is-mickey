@@ -8,19 +8,27 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Créer un objet audio avec le chemin relatif correct
+var audio = new Audio("../audio/son feu d'artifice.wav");
+
 //Activation et désactivation du canvas
 document.getElementById("toggleCanvasButton").addEventListener("click", function () {
   var canvas = document.getElementById("canvas"); // Correction de l'identifiant
   if (canvas.style.display === "none" || canvas.style.display === "") {
     canvas.style.display = "block"; // Afficher le canvas
     this.textContent = "Arrêter la fête";
+    loop();
+    // Utiliser la méthode play() sur l'objet audio pour jouer le son
+    audio.play();
   } else {
     canvas.style.display = "none"; // Cacher le canvas
     this.textContent = "Démarrer la fête";
+    // Utiliser la méthode pause() sur l'objet audio pour arrêter la lecture
+    audio.pause();
+    // Rembobiner le son pour qu'il puisse être rejoué depuis le début lors de la prochaine lecture
+    audio.currentTime = 0;
   }
 });
-
-//test origine ------------------------------------------------------------------------
 
 window.requestAnimFrame = (function () {
   return (
@@ -293,6 +301,3 @@ canvas.addEventListener("mouseup", function (e) {
   e.preventDefault();
   mousedown = false;
 });
-
-// once the window loads, we are ready for some fireworks!
-window.onload = loop;
