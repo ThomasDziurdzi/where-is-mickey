@@ -69,18 +69,18 @@ body {
             justify-content: center;
             height: 100%;
             width: 100%;
-
+            
             @media screen and (min-width:900px) {
-                background-image: url(images/menu/55e1c0d248a679ad24cc04ea694b78aa.jpg);
-                background-size: cover;
+              background-image: url(images/menu/55e1c0d248a679ad24cc04ea694b78aa.jpg);
+              background-size: cover;
+              .login-box {
+                display: flex;
+                justify-content: center;
+                #user-box {
+                  background-color: aqua;
+                }
             }
 
-            .login-box {
-              display: flex;
-              justify-content: center;
-              #user-box {
-                background-color: aqua;
-              }
 
             }
 
