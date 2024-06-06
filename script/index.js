@@ -1,7 +1,9 @@
 import characters from './characters.js';
 
 document.addEventListener('DOMContentLoaded', (event) => {
-
+  
+  
+    
     // creating columns of characters
     const columnContainer = document.querySelector('.columns-container');
 
@@ -9,7 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const columnCharacter = document.createElement('div');
         columnCharacter.classList.add('columns');
         columnCharacter.style.backgroundImage = `url(${image})`;
-        columnCharacter.dataset.index = index; 
+        columnCharacter.dataset.index = index;
         columnContainer.appendChild(columnCharacter);
     }
     for (let i = 0; i < characters.length; i++) {
@@ -18,78 +20,69 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     //filters when mouseover and mouseout on columns
     const columns = document.querySelectorAll('.columns');
-    //Opening or closing modal
+    columns.forEach((column) => {
+        column.addEventListener('mouseover', function () {
+            columns.forEach((col) => {
+                if (col !== column) {
+                    col.style.filter = 'grayscale(100%) opacity(0.6) blur(2px)';
+                    col.classList.add('transition');
+                    col.style.transform = '';
+                } else {
+                    col.style.filter = ''
+                    column.style.transform = 'scale(1.05)';
+                }
+            })
+            columnContainer.addEventListener('mouseleave', function () {
+                columnContainer.querySelectorAll('.columns').forEach(column => {
+                    column.style.filter = '';
+                    column.style.transform = '';
+                });
+            });
+        })
+    });
+
+    //Modal opening and closing
     const modal = document.querySelector('.modal');
-    //Opening or closing overlay modal
     const closeModal = document.querySelector('.modal');
     const overlayModal = document.querySelector('.overlayModal');
+    columns.forEach((column) => {
 
-
-    columns.forEach((col) => {
-        //FILTERS
-        col.addEventListener('mouseover', function () {
-            col.style.filter = 'grayscale(100%) opacity(0.6) blur(2px)';
-        })
-        //MODAL
-        col.addEventListener('click', function () {
+        //MODAL OPENING
+        column.addEventListener('click', function (event) {
+            //prevent for automatically closing modal
+            event.stopPropagation();
             // Get the index from the data attribute
-            const index = col.dataset.index;
-           // Find the corresponding character object
-           const character = characters[index];
+            const index = column.dataset.index;
+            // Find the corresponding character object
+            const character = characters[index];
             modal.classList.remove('hidden')
             // modalImage.classList.remove('hidden')
             overlayModal.classList.remove('hidden')
             modal.style.backgroundImage = `url(${character.image})`
         });
-    });
 
-   modal.removeEventListener('keydown', function(e){
-        if (e.key === 'Escape') {
-            modal.classList.add('hidden')
-        }
-   }) 
+        //MODAL CLOSING
+        document.addEventListener('click', function () {
+            if (!modal.classList.contains('hidden')) {
+                //adding class fade.out for playing animation
+                modal.classList.add('fade-out');
+                overlayModal.classList.add('fade-out');
 
-    // function attachEventListeners(column) {
-    //     column.addEventListener('mouseover', function () {
-    //         let modifiedColumns = [];
-    //         columnsContainer.querySelectorAll('.columns').forEach(col => {
-    //             if (col !== column) {
-    //                 col.style.filter = 'grayscale(100%) opacity(0.6) blur(2px)';
-    //                 col.classList.add('transition');
-    //                 col.style.transform = '';
-    //                 modifiedColumns.push(col);
-    //             }
-    //         });
+                setTimeout(() => {
+                    //when animation has ending, hiding modal and removing
+                    //fade-out class
+                    modal.classList.add('hidden');
+                    overlayModal.classList.add('hidden');
+                    modal.style.backgroundImage = '';
+                    modal.classList.remove('fade-out');
+                    overlayModal.classList.remove('fade-out');
+                }, 200);
+            }
+        })
+    })
 
-    //         column.style.transform = 'scale(1.05)';
 
-    //         column.addEventListener('mouseout', function () {
-    //             modifiedColumns.forEach(col => {
-    //                 col.style.filter = '';
-    //                 col.style.transform = '';
-    //             });
-    //             column.style.transform = '';
-    //         }, { once: true });
-    //     });  
-    // }
-
-    // columnsContainer.addEventListener('mouseleave', function () {
-    //     columnsContainer.querySelectorAll('.columns').forEach(column => {
-    //         column.style.filter = '';
-    //         column.style.transform = '';
-    //     });
-    // });
-
-    // characters.forEach((character) => {
-    //     const columnDiv = document.createElement('div');
-    //     columnDiv.classList.add('columns');
-    //     columnDiv.style.backgroundImage = `url(${character.imgCut})`;
-    //     columnsContainer.appendChild(columnDiv);
-
-    //     attachEventListeners(columnDiv);
-    //     attachEventListenersModal(columnDiv, character.img); // Attach modal event listener here
-    // });
-
+    //Transition for main page to ruelle page
     function buttonTransition(classButton, overlay) {
         const transitionLink = document.querySelector(`.${classButton}`);
         const overlayAnimation = document.querySelector(`.${overlay}`);
@@ -108,31 +101,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    buttonTransition('transition-button', 'overlayPage');
-
-    // function attachEventListenersModal(column, imgSrc) {
-    //     const modal = document.querySelector('.modal');
-    //     const overlayColumn = document.querySelector('.overlayColumn');
-    //     const closeModalBtn = document.querySelector('.btn-close');
-    //     // const img = document.querySelector('.fullCharacter');
-
-    //     const openModal = function () {
-    //         const characterImg = document.createElement("img");
-    //         characterImg.src = imgSrc; // Set the image source for the modal
-    //         modal.classList.remove('hidden');
-    //         overlayColumn.classList.remove('hidden');
-    //     };
-
-    //     const closeModal = function () {
-    //         modal.classList.add('hidden');
-    //         overlayColumn.classList.add('hidden');
-    //     };
-
-    //     column.addEventListener('click', openModal);
-    //     closeModalBtn.addEventListener('click', closeModal);
-    // }
-
-
-
-
+    // buttonTransition('transition-button', 'overlayPageTwo');
+    const playButton = document.querySelector('.play-button')
+    const startModal = document.querySelector('.start-modal');
+    playButton.addEventListener('click', function() {
+        startModal.classList.remove('hidden');
+        console.log(modal)
+    })
 });
+
+
+    
+
+
+
+
+

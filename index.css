@@ -57,7 +57,7 @@ body {
                 }
 
                 .transition {
-                    transition: all 0.2s ease;
+                    transition: all 0.3s ease;
                     /* Permet de regler le temps entre le no-filter et le filter */
                 }
             }
@@ -168,9 +168,8 @@ body {
         }
     }
 
-
 /*Overlay au changement de page */
-.overlayPage {
+.overlayPageTwo {
     position: fixed;
     top: 0;
     left: 0;
@@ -182,7 +181,7 @@ body {
     transition: opacity 1s ease;
     z-index: 9999; /* S'assure que l'overlay est au-dessus de tout */
   }
-  .overlayPage.active {
+  .overlayPageTwo.active {
     opacity: 1;
     pointer-events: all;
   }
@@ -190,15 +189,14 @@ body {
  /* affichage modale characters au click sur colonne */
   .modal {
     position: fixed;
-    height: 76vh;
-    width: 38vw;
+    height: 90vh;
+    width: 45vw;
     top: 50%;
     background-repeat: no-repeat;
     background-size: contain;
-    border-radius: 20px;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: fade-in-animation 0.3s linear 0s 1 normal both running;
+    animation: fade-in-animation 0.2s linear 0s 1 normal both running;
     z-index: 101;
   }
   @keyframes fade-in-animation {
@@ -213,6 +211,20 @@ body {
     }
   }
 
+  .modal.fade-out, .overlayModal.fade-out {
+    animation: fade-out-animation 0.2s linear 0s 1 normal both running;
+}
+@keyframes fade-out-animation {
+    0% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+    100% {
+        filter: blur(3px);
+        opacity: 0;
+    }
+}
+
   /* Affichage overlay characters au click sur colonne */
 .overlayModal {
     position: fixed;
@@ -225,10 +237,18 @@ body {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
     z-index: 100;
-    animation: fade-in-animation 0.4s linear 0s 1 normal both running;
+    animation: fade-in-animation 0.2s linear 0s 1 normal both running;
   }
-
 
   .hidden {
     display: none;
+  }
+
+  .start-modal {
+    width: 50%;
+    height: 50%;
+    position: fixed;
+    /* transform: translate(-50%, 50%); */
+    border: 1px solid black;
+    z-index:2000;
   }
