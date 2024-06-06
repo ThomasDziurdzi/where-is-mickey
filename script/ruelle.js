@@ -193,6 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const franklinNextBtn = document.getElementById('nextFranklin');
     const franklinMessage2 = document.getElementById('franklinMessage2');
     const franklinMessage3 = document.getElementById('franklinMessage3');
+    const franklinMessage4 = document.getElementById('franklinMessage4');
+    const closeLastBtnF = document.getElementById('closeBtnF');
 
     //Joueur
     const playerLeave = document.getElementById('partir');
@@ -288,19 +290,24 @@ document.addEventListener('DOMContentLoaded', () => {
         garbageMessage2.style.display = 'none';
     })
 
+
+    let franklinMessageDisplay = false
+
     //Unlocked garbage interaction :
     garbageImage.addEventListener('click', () => {
-        garbageMessage2.style.display = "block";
+        if (franklinMessageDisplay) {
+            garbageMessage2.style.display = "block";
+        } else { garbageMessage.style.display = 'block'; }
     })
 
     // //Close garbage's message:
-    // closeBtnGarbage.addEventListener('click', () => {
-    //     garbageMessage.style.display = 'none';
-    // })
+    closeBtnGarbage.addEventListener('click', () => {
+        garbageMessage.style.display = 'none';
+    })
 
     // //Garbage's Interaction :
     // garbageImage.addEventListener('click', () => {
-    //     garbageMessage.style.display = 'block';
+
     // })
 
     //Close car's message :
@@ -316,6 +323,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //Unlock garbage interaction and close big talk with Franklin and Foireux :
     unlockGarbage.addEventListener('click', () => {
         penguinMessage3.style.display = 'none';
+        franklinMessageDisplay = true;
+        franklinMessageDisplay2 = true;
     })
 
     //Franklin to Foireux :
@@ -330,9 +339,19 @@ document.addEventListener('DOMContentLoaded', () => {
         franklinMessage3.style.display = "block";
     })
 
+    //close last message of franklin
+    closeLastBtnF.addEventListener('click', () => {
+        franklinMessage4.style.display = "none";
+    })
+
+    let franklinMessageDisplay2 = false
+
     // Franklin 1st message:
     franklinImage.addEventListener('click', () => {
-        franklinMessage.style.display = "block";
+        if (franklinMessageDisplay2) {
+            franklinMessage4.style.display = 'block';
+        } else { franklinMessage.style.display = "block"; }
+
     });
     // Frankin 2nd message to player:
     nextFranklinToPlayer.addEventListener('click', () => {
