@@ -15,7 +15,7 @@ openPopupButton.addEventListener("click", () => {
   popup.style.display = "block";
 });
 
-function chooseOption(option) {
+function chooseOption(option2) {
   document.getElementById("popup").addEventListener("click", function () {
     const video = document.getElementById("videoPlayer");
     if (video.paused) {
