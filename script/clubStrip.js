@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeBtnFoireux = document.getElementById('closeFoireux');
     const closeBtnFoireux2 = document.getElementById('closeFoireux2');
 
-    //Devinette 
+
 
 
 
