@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         bag: bagSound,
         sandwich: sandwichSound,
         launch: launchSound,
+
     };
 
     Object.keys(sounds).forEach(key => {
@@ -183,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
             franklinImage.style.transform = "scale(1.5)";
         });
 
+
         franklinImage.addEventListener('mouseout', () => {
             franklinImage.style.transition = "transform 0.3s ease";
             franklinImage.style.transform = "scale(1)";
@@ -199,6 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+
+document.addEventListener('DOMContentLoaded', () => {
 
     // Inspecteur Foireux
     const penguinImage = document.getElementById('penguin');
@@ -481,6 +486,8 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtnMickey.addEventListener('click', () => {
         lastTalkOfMickey.style.display = 'none';
     });
+
 });
+
 
 
