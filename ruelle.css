@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     /*
@@ -126,9 +127,10 @@ nav>ul>li>a>span {
 
 .popupP {
     display: none;
-    position: fixed;
-    top: 50%;
-    left: 70%;
+    position: absolute;
+    width: 17%;
+    top: 60%;
+    left: 73%;
     transform: translate(-50%, -50%);
     padding: 10px;
     background-color: white;
@@ -140,11 +142,12 @@ nav>ul>li>a>span {
 
 .popupJ {
     display: none;
-    position: fixed;
-    width: 30%;
-    height: 10%;
-    top: 30%;
-    left: 30%;
+    position: absolute;
+    justify-self: center;
+    width: 8%;
+    height: 9%;
+    top: 88%;
+    left: 23%;
     transform: translate(-50%, -50%);
     padding: 10px;
     z-index: 1000;
@@ -156,11 +159,12 @@ nav>ul>li>a>span {
 
 .popupJ2 {
     display: none;
-    position: fixed;
-    width: 30%;
-    height: 10%;
-    top: 30%;
-    right: 5%;
+    position: absolute;
+    justify-self: center;
+    width: 8%;
+    height: 9%;
+    top: 78%;
+    right: 69%;
     transform: translate(-50%, -50%);
     padding: 10px;
     z-index: 1000;
@@ -172,10 +176,10 @@ nav>ul>li>a>span {
 
 .popupF {
     display: none;
-    position: fixed;
-    width: 50%;
-    top: 30%;
-    left: 30%;
+    position: absolute;
+    width: 17%;
+    top: 80%;
+    left: 28%;
     transform: translate(-50%, -50%);
     padding: 10px;
     background-color: white;
@@ -199,10 +203,10 @@ nav>ul>li>a>span {
 
 .popupM {
     display: none;
-    position: fixed;
-    width: 26%;
-    top: 50%;
-    left: 50%;
+    position: absolute;
+    width: 16%;
+    top: 65%;
+    left: 45%;
     transform: translate(-50%, -50%);
     padding: 10px;
     background-color: white;
@@ -227,18 +231,19 @@ nav>ul>li>a>span {
 .nextJ {
     position: absolute;
     text-align: center;
-    bottom: 50%;
-    right: 50%;
+    padding: 0.1rem;
+    bottom: 10%;
+    right: 32%;
     cursor: pointer;
     font-size: 15px;
     border: 1px solid black;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(252, 249, 249);
     color: rgb(10, 1, 1);
 }
 
 .popupJ3 {
     display: none;
-    position: fixed;
+    position: absolute;
     width: 50%;
     height: 20%;
     top: 30%;
@@ -254,10 +259,10 @@ nav>ul>li>a>span {
 
 .popupC {
     display: none;
-    position: fixed;
-    width: 20%;
-    top: 40%;
-    left: 35%;
+    position: absolute;
+    width: 13%;
+    top: 48%;
+    left: 25%;
     transform: translate(-50%, -50%);
     padding: 10px;
     background-color: white;
@@ -265,15 +270,16 @@ nav>ul>li>a>span {
     z-index: 1000;
     border-radius: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .popupG {
     display: none;
-    position: fixed;
-    width: 20%;
-    top: 40%;
-    left: 59%;
+    position: absolute;
+    width: 10%;
+    height: 11%;
+    top: 55%;
+    right: 31%;
     transform: translate(-50%, -50%);
     padding: 10px;
     background-color: white;
@@ -281,7 +287,7 @@ nav>ul>li>a>span {
     z-index: 1000;
     border-radius: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 
@@ -303,14 +309,7 @@ nav>ul>li>a>span {
 
 }
 
-#knife {
-    position: absolute;
-    bottom: 0;
-    width: 4%;
-    top: 81%;
-    left: 61%;
 
-}
 
 #launch {
     position: absolute;
@@ -399,11 +398,11 @@ nav>ul>li>a>span {
 
 .popupS {
     display: none;
-    position: fixed;
+    position: absolute;
     width: 10%;
-    height: 10%;
-    top: 30%;
-    right: 35%;
+    height: 9%;
+    top: 43%;
+    right: 40%;
     transform: translate(-50%, -50%);
     padding: 10px;
     z-index: 1000;
@@ -415,11 +414,11 @@ nav>ul>li>a>span {
 
 .popupR {
     display: none;
-    position: fixed;
+    position: absolute;
     width: 10%;
-    height: 10%;
+    height: 9%;
     top: 55%;
-    right: 35%;
+    right: 40%;
     transform: translate(-50%, -50%);
     padding: 10px;
     z-index: 1000;
@@ -431,11 +430,11 @@ nav>ul>li>a>span {
 
 .popupA {
     display: none;
-    position: fixed;
+    position: absolute;
     width: 10%;
-    height: 10%;
+    height: 9%;
     top: 55%;
-    right: 5%;
+    right: 22%;
     transform: translate(-50%, -50%);
     padding: 10px;
     z-index: 1000;
@@ -447,11 +446,11 @@ nav>ul>li>a>span {
 
 .popupSa {
     display: none;
-    position: fixed;
+    position: absolute;
     width: 10%;
-    height: 10%;
-    top: 30%;
-    right: 5%;
+    height: 9%;
+    top: 43%;
+    right: 22%;
     transform: translate(-50%, -50%);
     padding: 10px;
     z-index: 1000;
@@ -459,9 +458,4 @@ nav>ul>li>a>span {
     text-align: center;
     cursor: pointer;
     background-color: white;
-
 }
-
-
-
-
