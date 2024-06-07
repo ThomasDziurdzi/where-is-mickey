@@ -7,7 +7,7 @@
   --modalFontFamily: "New Walt Disney Font", sans-serif;
   --modalPadding: 20px;
   --modalBorderRadius: 20px;
-  --modalShadow: 0 4px 8px rgba(0, 0, 0, ); 
+  --modalShadow: 0 4px 8px rgba(0, 0, 0, );
 }
 
 * {
@@ -70,49 +70,50 @@ body {
     /*margin vertical à 0,
        permet de centrer l'image avec auto*/
 
-       /*---------NAV------*/
-       nav {
-        position: absolute;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 0rem;
-        color: #fff;
-        margin-top: 10px;
-      }
-  
-      nav :hover {
-        color: red;
-      }
-  
-      nav > a.logo {
-        display: none;
-        color: white;
-        text-decoration: none;
-      }
-  
-      nav > ul {
-        display: flex;
-        list-style: none;
-        padding: 0;
-      }
-  
-      nav > ul > li > a {
-        color: white;
-        text-decoration: none;
-        padding: 1rem;
-      }
-  
-      nav > ul > li > a > i {
-        font-size: 3em;
-      }
-  
-      nav > ul > li > a > span {
-        display: none;
-      }
+    /*---------NAV------*/
+    nav {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0rem;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    nav :hover {
+      color: red;
+    }
+
+    nav>a.logo {
+      display: none;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav>ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    nav>ul>li>a {
+      color: white;
+      text-decoration: none;
+      padding: 1rem;
+    }
+
+    nav>ul>li>a>i {
+      font-size: 3em;
+    }
+
+    nav>ul>li>a>span {
+      display: none;
+    }
+
     /*----FIN NAV-----*/
 
     #charlie {
@@ -125,6 +126,7 @@ body {
       transform: translate(-50%, -50%);
 
     }
+
     #charlie:hover {
       transform: translate(-50%, -50%) scale(2);
       transition: transform 0.3 ease;
@@ -147,8 +149,8 @@ body {
 
 /* pour masquer les modal avant le click */
 .hidden {
-  display: none; 
-} 
+  display: none;
+}
 
 /* style des modals */
 #dialogBoxHercule {
@@ -166,7 +168,9 @@ body {
   padding: var(--modalPadding);
   box-shadow: 0 4px 8px rgba(0, 0, 0, );
   z-index: 1000;
-}   /*z-index 1000 = pour être sûr que la boîte sera en premier plan*/
+}
+
+/*z-index 1000 = pour être sûr que la boîte sera en premier plan*/
 
 #dialogBoxCharlie {
   position: fixed;
@@ -191,16 +195,16 @@ body {
   top: 1px;
   right: 10px;
   /* cursor: pointer; */
-  cursor: url(./images/ruelle/sandwich30px.png),auto;
+  cursor: url(./images/ruelle/sandwich30px.png), auto;
   font-family: 'Courier New', Courier, monospace;
   background-color: #8888889d;
   border-radius: 50%;
   padding: 1px;
-  margin:10px;
+  margin: 10px;
   width: 30px;
-  background:#88888876;
-  height:30px;
-  text-align:center;
+  background: #88888876;
+  height: 30px;
+  text-align: center;
 }
 
 /*flouté du background au click sur les modals*/
@@ -216,6 +220,7 @@ body {
   backdrop-filter: blur(5px);
   z-index: 1;
 }
+
 .overlayPageWin {
   position: fixed;
   top: 0;
@@ -226,8 +231,10 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: opacity 1s ease;
-  z-index: 9999; /* S'assure que l'overlay est au-dessus de tout */
+  z-index: 9999;
+  /* S'assure que l'overlay est au-dessus de tout */
 }
+
 .overlayPageWin.active {
   opacity: 1;
   pointer-events: all;
