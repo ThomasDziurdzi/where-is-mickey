@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const barChoice2 = document.getElementById('playerChoice2');
     const nextBtnJ1 = document.getElementById('nextPlayer1');
     const nextBtnJ2 = document.getElementById('nextPlayer2');
-
+    const devinetteChoice1 = document.getElementById('playerChoice3');
+    const devinetteChoice2 = document.getElementById('playerChoice4');
+    const devinetteChoice3 = document.getElementById('playerChoice5');
+    const nextBtnJ3 = document.getElementById('nextPlayer3');
     //Porky Chris-P Bacon
     const porkyImage = document.getElementById('pork');
     const porkyMessage = document.getElementById('porkyMessage');
@@ -19,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeBtnBugs = document.getElementById('closeBugs');
     const bugsMessage2 = document.getElementById('bugsMessage2');
     const closeBtnBugs2 = document.getElementById('closeBugs2');
+    const bugsMessage3 = document.getElementById('bugsMessage3');
+    const closeBtnBugs3 = document.getElementById('closeBugs3');
 
     //Daffy the Bartender
     const daffyImage = document.getElementById('canard');
@@ -36,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const minnieImage = document.getElementById('minnie');
     const minnieMessage = document.getElementById('minnieMessage');
     const closeBtnMinnie = document.getElementById('closeMinnie');
+    const minnieMessage2 = document.getElementById('minnieMessage2');
+    const closeBtnMinnie2 = document.getElementById('closeMinnie2');
 
     //Inspecteur Foireux
     const foireuxImage = document.getElementById('pingouin');
@@ -43,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const foireuxMessage2 = document.getElementById('foireuxMessage2');
     const closeBtnFoireux = document.getElementById('closeFoireux');
     const closeBtnFoireux2 = document.getElementById('closeFoireux2');
+    const foireuxMessage3 = document.getElementById('foireuxMessage3');
+    const btnFinal = document.getElementById('suiteFoireux3');
 
 
 
@@ -52,10 +61,13 @@ document.addEventListener('DOMContentLoaded', function () {
     closeBtnFoireux2.addEventListener('click', () => {
         foireuxMessage2.style.display = "none";
     })
-
+    let final = false
     //Foireux 2nd Message 
     foireuxImage.addEventListener('click', () => {
-        foireuxMessage2.style.display = "block";
+        if (final) {
+            foireuxMessage3.style.display = "block"
+        } else { foireuxMessage2.style.display = "block"; }
+
 
     })
 
@@ -69,15 +81,26 @@ document.addEventListener('DOMContentLoaded', function () {
         foireuxMessage.style.display = "block";
     })
 
+    // Minie close 2nd message
+    closeBtnMinnie2.addEventListener('click', () => {
+        minnieMessage2.style.display = 'none';
+        final = true;
+    })
+
     //Close Minnie 1st message
     closeBtnMinnie.addEventListener('click', () => {
         minnieMessage.style.display = 'none';
         minnieMessageDisplay = true;
     })
 
+    let devinetteDone = false
+
     //Minnie 1st Message
     minnieImage.addEventListener('click', () => {
-        minnieMessage.style.display = "block";
+        if (devinetteDone) {
+            minnieMessage2.style.display = 'block';
+        } else { minnieMessage.style.display = "block"; }
+
     })
     // close water message
     closeBtnDaffy2.addEventListener('click', () => {
@@ -117,12 +140,28 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
     });
+    //bug close 3rd message 
+    closeBtnBugs3.addEventListener('click', () => {
+        bugsMessage3.style.display = "none";
+        devinetteDone = true;
+    })
+
+    //bug 3rd message
+    nextBtnJ3.addEventListener('click', () => {
+        devinetteChoice1.style.display = "none";
+        devinetteChoice2.style.display = "none";
+        devinetteChoice3.style.display = "none";
+        bugsMessage3.style.display = "block";
+    })
 
     //bugs close second message 
     closeBtnBugs2.addEventListener('click', () => {
         bugsMessage2.style.display = "none";
         bugsBunnyDisplay = true;
         Bugsdevinette = true;
+        devinetteChoice1.style.display = "block";
+        devinetteChoice2.style.display = "block";
+        devinetteChoice3.style.display = "block";
     })
 
     //Unlock daffy dialogue
@@ -143,10 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
     bugsImage.addEventListener('click', () => {
         if (minnieMessageDisplay) {
             bugsMessage2.style.display = 'block';
-        } else if (minnieMessageDisplay && bugsBunnyDisplay) {
-
-        }
-        else {
+        } else {
             bugsMessage.style.display = 'block';
         }
     })
